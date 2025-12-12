@@ -7,6 +7,7 @@ import {
     ScanLine,
     LayoutDashboard
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
     {
@@ -65,23 +66,24 @@ export function FeaturesGrid() {
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {features.map((feature, index) => (
-                    <Card
-                        key={index}
-                        className="group relative overflow-hidden p-6 border-gray-100"
-                        hoverEffect
-                    >
-                        <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ${feature.bg} ${feature.iconColor}`}>
-                            <feature.icon className="h-6 w-6" />
-                        </div>
-                        <h3 className="mb-2 text-xl font-bold text-foreground">
-                            {feature.title}
-                        </h3>
-                        <p className="text-muted-foreground">
-                            {feature.description}
-                        </p>
-                        {/* Hover Gradient Overlay */}
-                        <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-300 group-hover:opacity-5`} />
-                    </Card>
+                    <Link href="/login" key={index} className="block group">
+                        <Card
+                            className="group relative overflow-hidden p-6 border-gray-100 h-full transition-all hover:shadow-lg"
+                            hoverEffect
+                        >
+                            <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ${feature.bg} ${feature.iconColor}`}>
+                                <feature.icon className="h-6 w-6" />
+                            </div>
+                            <h3 className="mb-2 text-xl font-bold text-foreground">
+                                {feature.title}
+                            </h3>
+                            <p className="text-muted-foreground">
+                                {feature.description}
+                            </p>
+                            {/* Hover Gradient Overlay */}
+                            <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-300 group-hover:opacity-5`} />
+                        </Card>
+                    </Link>
                 ))}
             </div>
         </SectionWrapper>

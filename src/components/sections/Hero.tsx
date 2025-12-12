@@ -36,9 +36,11 @@ export function Hero() {
                                     Launch BSDK AI <ArrowRight className="h-4 w-4" />
                                 </Button>
                             </Link>
-                            <Button size="lg" variant="secondary">
-                                Explore Features
-                            </Button>
+                            <Link href="/login">
+                                <Button size="lg" variant="secondary">
+                                    Explore Features
+                                </Button>
+                            </Link>
                         </div>
 
                         <ul className="space-y-2 text-sm font-medium text-muted-foreground">

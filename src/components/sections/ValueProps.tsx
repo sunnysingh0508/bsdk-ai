@@ -1,6 +1,7 @@
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Card } from "@/components/ui/Card";
 import { Layers, Zap, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 const valueProps = [
     {
@@ -37,19 +38,21 @@ export function ValueProps() {
 
             <div className="grid gap-8 md:grid-cols-3">
                 {valueProps.map((prop, index) => (
-                    <Card key={index} className="p-8 border-none shadow-none bg-[#F8F9FC]">
-                        <div
-                            className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${prop.color}`}
-                        >
-                            <prop.icon className="h-7 w-7" />
-                        </div>
-                        <h3 className="mb-3 text-xl font-bold text-foreground">
-                            {prop.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                            {prop.description}
-                        </p>
-                    </Card>
+                    <Link href="/login" key={index} className="block group">
+                        <Card className="p-8 border-none shadow-none bg-[#F8F9FC] h-full transition-all hover:bg-gray-50 cursor-pointer">
+                            <div
+                                className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${prop.color}`}
+                            >
+                                <prop.icon className="h-7 w-7" />
+                            </div>
+                            <h3 className="mb-3 text-xl font-bold text-foreground">
+                                {prop.title}
+                            </h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                                {prop.description}
+                            </p>
+                        </Card>
+                    </Link>
                 ))}
             </div>
         </SectionWrapper>
