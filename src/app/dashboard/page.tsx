@@ -1,4 +1,5 @@
 import { BookOpen, GraduationCap, CalendarOff } from "lucide-react";
+import Link from "next/link";
 import { StatCard } from "@/components/dashboard/widgets/StatCard";
 import { AssignmentCard } from "@/components/dashboard/widgets/AssignmentCard";
 import { AttendanceWidget } from "@/components/dashboard/widgets/AttendanceWidget";
@@ -67,7 +68,7 @@ export default function DashboardPage() {
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
                                 <h2 className="font-bold text-lg">Assignments Overview</h2>
-                                <button className="text-sm text-indigo-600 hover:underline">View All</button>
+                                <Link href="/assignments" className="text-sm text-indigo-600 hover:underline">View All</Link>
                             </div>
                             <div className="grid gap-4">
                                 {assignments.map((assignment, i) => (

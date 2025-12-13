@@ -12,9 +12,14 @@ import {
     BookOpen,
     ScanLine,
     CalendarDays,
+    ChartBar as BarChart,
     Settings,
     LogOut,
     User,
+    CheckCircle,
+    HelpCircle,
+    Files,
+    FileText
 } from "lucide-react";
 
 const sidebarItems = [
@@ -22,17 +27,19 @@ const sidebarItems = [
         category: "Analytics",
         items: [
             { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-            { name: "CGPA Predictor", href: "/cgpa", icon: GraduationCap },
-            { name: "Attendance Tracker", href: "/attendance", icon: CalendarCheck },
-            { name: "Bunk Calculator", href: "/dashboard/bunk-calc", icon: Calculator },
+            { name: "Analytics", href: "/analytics", icon: BarChart },
+            { name: "Export & Reports", href: "/reports", icon: FileText },
+            { name: "Attendance", href: "/attendance", icon: CheckCircle },
+            { name: "CGPA Predictor", href: "/cgpa-predictor", icon: GraduationCap },
+            { name: "Bunk Calculator", href: "/bunk-calculator", icon: Calculator },
         ],
     },
     {
         category: "Tools",
         items: [
-            { name: "Assignments", href: "/dashboard/assignments", icon: BookOpen },
-            { name: "Notes Scanner", href: "/dashboard/notes", icon: ScanLine },
-            { name: "Timetable", href: "/dashboard/timetable", icon: CalendarDays },
+            { name: "Assignments", href: "/assignments", icon: BookOpen },
+            { name: "Notes Library", href: "/notes", icon: Files },
+            { name: "Timetable", href: "/timetable", icon: CalendarDays },
         ],
     },
 ];
@@ -100,11 +107,18 @@ export function Sidebar() {
                         </h3>
                         <div className="space-y-1">
                             <Link
-                                href="/dashboard/settings"
+                                href="/settings"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
                             >
                                 <Settings className="h-4 w-4 text-muted-foreground" />
                                 Settings
+                            </Link>
+                            <Link
+                                href="/help"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                            >
+                                <HelpCircle className="h-4 w-4 text-muted-foreground" />
+                                Help & Support
                             </Link>
                             <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
                                 <LogOut className="h-4 w-4" />

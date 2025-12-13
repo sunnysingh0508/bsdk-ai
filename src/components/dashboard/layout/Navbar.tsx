@@ -4,6 +4,7 @@ import { Bell, Search, Menu } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Navbar() {
     return (
@@ -29,12 +30,12 @@ export function Navbar() {
                     />
                 </div>
 
-                <Button variant="ghost" size="sm" className="rounded-full relative w-9 px-0">
+                <Link href="/notifications" className="relative flex h-9 w-9 items-center justify-center rounded-full hover:bg-muted/50 transition-colors">
                     <Bell className="h-5 w-5 text-muted-foreground" />
                     <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-zinc-900" />
-                </Button>
+                </Link>
 
-                <div className="h-8 w-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 p-[2px]">
+                <Link href="/profile" className="h-8 w-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 p-[2px] cursor-pointer hover:opacity-90 transition-opacity">
                     <div className="relative h-full w-full rounded-full bg-white dark:bg-zinc-900 overflow-hidden">
                         <Image
                             src="https://github.com/shadcn.png"
@@ -43,7 +44,7 @@ export function Navbar() {
                             className="object-cover"
                         />
                     </div>
-                </div>
+                </Link>
             </div>
         </header>
     );
