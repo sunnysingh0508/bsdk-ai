@@ -1,5 +1,5 @@
 import { Trash2 } from "lucide-react";
-import { Subject, Grade, GRADE_POINTS } from "../page";
+import { Subject, Grade, GRADE_POINTS } from "../types";
 import { cn } from "@/lib/utils";
 
 interface GradeTableProps {

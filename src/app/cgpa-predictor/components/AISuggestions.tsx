@@ -1,5 +1,5 @@
 import { Sparkles } from "lucide-react";
-import { Subject, GRADE_POINTS } from "../page";
+import { Subject, GRADE_POINTS } from "../types";
 
 interface AISuggestionsProps {
     subjects: Subject[];

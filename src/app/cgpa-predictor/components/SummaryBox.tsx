@@ -1,4 +1,4 @@
-import { Subject, GRADE_POINTS } from "../page";
+import { Subject, GRADE_POINTS } from "../types";
 
 interface SummaryBoxProps {
     totalCredits: number;
