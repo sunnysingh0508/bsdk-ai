@@ -34,7 +34,7 @@ export function AISuggestions({ subjects }: AISuggestionsProps) {
     }
 
     return (
-        <div className="rounded-[24px] bg-gradient-to-br from-[#181B23] to-[#201c29] p-6 border border-white/5 shadow-xl relative overflow-hidden group">
+        <div className="rounded-[24px] bg-card p-6 border border-border shadow-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Sparkles className="h-24 w-24 text-purple-500" />
             </div>
@@ -43,14 +43,14 @@ export function AISuggestions({ subjects }: AISuggestionsProps) {
                 <div className="p-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg shadow-lg shadow-purple-900/20">
                     <Sparkles className="h-4 w-4 text-white" />
                 </div>
-                <h2 className="text-lg font-semibold text-white">
+                <h2 className="text-lg font-semibold text-foreground">
                     AI Suggestions to Improve Your CGPA
                 </h2>
             </div>
 
             <div className="space-y-3 relative z-10">
                 {suggestions.map((suggestion, idx) => (
-                    <div key={idx} className="flex gap-3 text-sm text-indigo-100/80 bg-white/5 p-3 rounded-xl border border-white/5">
+                    <div key={idx} className="flex gap-3 text-sm text-foreground/80 bg-muted/30 p-3 rounded-xl border border-border">
                         <span className="text-purple-400 font-bold">•</span>
                         {suggestion}
                     </div>

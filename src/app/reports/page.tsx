@@ -12,17 +12,17 @@ export default function ReportsPage() {
     const [selectedReportId, setSelectedReportId] = useState('attendance');
 
     return (
-        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
             <div className="max-w-7xl mx-auto animate-in fade-in duration-500">
 
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-8">
-                    <div className="p-2 bg-[#6366F1]/10 rounded-lg">
-                        <FileText className="w-8 h-8 text-[#6366F1]" />
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                        <FileText className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold font-heading text-white">Export & Reports</h1>
-                        <p className="text-gray-400">Generate detailed academic reports and export them in multiple formats.</p>
+                        <h1 className="text-3xl font-bold font-heading text-foreground">Export & Reports</h1>
+                        <p className="text-muted-foreground">Generate detailed academic reports and export them in multiple formats.</p>
                     </div>
                 </div>
 

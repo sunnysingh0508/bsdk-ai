@@ -31,8 +31,8 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputPro
         };
 
         const getStrengthColor = (score: number) => {
-            if (score === 0) return "bg-gray-200";
-            if (score <= 2) return "bg-red-500";
+            if (score === 0) return "bg-muted";
+            if (score <= 2) return "bg-destructive";
             if (score <= 4) return "bg-yellow-500";
             return "bg-green-500";
         };
@@ -69,14 +69,14 @@ export const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputPro
                 />
                 {showStrengthMeter && (value as string)?.length > 0 && (
                     <div className="space-y-1">
-                        <div className="flex h-1 w-full overflow-hidden rounded-full bg-gray-100">
+                        <div className="flex h-1 w-full overflow-hidden rounded-full bg-muted">
                             <div
                                 className={cn("h-full transition-all duration-500 ease-out", getStrengthColor(strength))}
                                 style={{ width: `${(strength / 5) * 100}%` }}
                             />
                         </div>
                         <p className={cn("text-xs font-medium text-right transition-colors",
-                            strength <= 2 ? "text-red-500" : strength <= 4 ? "text-yellow-600" : "text-green-600"
+                            strength <= 2 ? "text-destructive" : strength <= 4 ? "text-yellow-600" : "text-green-600"
                         )}>
                             {getStrengthText(strength)}
                         </p>

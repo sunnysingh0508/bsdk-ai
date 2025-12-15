@@ -67,8 +67,8 @@ export default function DashboardPage() {
                         {/* Assignments Widget */}
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
-                                <h2 className="font-bold text-lg">Assignments Overview</h2>
-                                <Link href="/assignments" className="text-sm text-indigo-600 hover:underline">View All</Link>
+                                <h2 className="font-bold text-lg text-foreground">Assignments Overview</h2>
+                                <Link href="/assignments" className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline">View All</Link>
                             </div>
                             <div className="grid gap-4">
                                 {assignments.map((assignment, i) => (
@@ -80,15 +80,15 @@ export default function DashboardPage() {
                         {/* Attendance Widget */}
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
-                                <h2 className="font-bold text-lg">Attendance & Bunk Status</h2>
-                                <button className="text-sm text-indigo-600 hover:underline">Manage</button>
+                                <h2 className="font-bold text-lg text-foreground">Attendance & Bunk Status</h2>
+                                <button className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline">Manage</button>
                             </div>
-                            <div className="rounded-xl border bg-white p-6 shadow-sm">
+                            <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-sm">
                                 <AttendanceWidget attendance={attendanceData} />
                             </div>
 
                             <div className="pt-4">
-                                <h2 className="font-bold text-lg mb-4">Timetable Preview</h2>
+                                <h2 className="font-bold text-lg mb-4 text-foreground">Timetable Preview</h2>
                                 <TimetablePreview />
                             </div>
                         </div>
@@ -96,11 +96,11 @@ export default function DashboardPage() {
 
                     {/* Row 2: Charts */}
                     <div className="grid gap-8 md:grid-cols-2">
-                        <div className="rounded-xl border bg-white p-6 shadow-sm">
+                        <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-sm">
                             <h2 className="font-bold text-lg mb-6">CGPA Insights</h2>
                             <CGPAChart cgpa={8.4} />
                         </div>
-                        <div className="rounded-xl border bg-white p-6 shadow-sm">
+                        <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-sm">
                             <h2 className="font-bold text-lg mb-2">Weekly Study Insights</h2>
                             <ProductivityChart />
                         </div>
@@ -110,7 +110,7 @@ export default function DashboardPage() {
                 {/* Right Sidebar Tools (1 Col) */}
                 <div className="space-y-6 lg:col-span-1">
                     <AISuggestionCard />
-                    <h2 className="font-bold text-lg">AI Recommendations</h2>
+                    <h2 className="font-bold text-lg text-foreground">AI Recommendations</h2>
                     <div className="space-y-6">
                         <MiniCalendar />
                         <ReminderWidget />

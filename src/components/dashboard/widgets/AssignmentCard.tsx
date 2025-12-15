@@ -18,7 +18,7 @@ export function AssignmentCard({ title, subject, due, status, progress }: Assign
     };
 
     return (
-        <div className="rounded-xl border bg-white p-4 shadow-sm transition-all hover:shadow-md dark:bg-zinc-900 flex flex-col gap-3">
+        <div className="rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md text-card-foreground flex flex-col gap-3">
             <div className="flex items-start justify-between">
                 <Badge variant="outline" className="bg-gray-50 text-xs font-normal text-muted-foreground">{subject}</Badge>
                 <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${statusColor[status]}`}>

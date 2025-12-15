@@ -12,7 +12,7 @@ export default function InsightsCard() {
 
     return (
         <div className="relative overflow-hidden rounded-[24px] p-[1px] bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
-            <div className="bg-[#181B23] rounded-[23px] p-6 h-full relative overflow-hidden">
+            <div className="bg-card rounded-[23px] p-6 h-full relative overflow-hidden">
                 {/* Background Glow */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
@@ -29,7 +29,7 @@ export default function InsightsCard() {
                     {insights.map((text, i) => (
                         <div key={i} className="flex gap-3 items-start p-3 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
                             <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" />
-                            <p className="text-sm text-gray-300 leading-relaxed" dangerouslySetInnerHTML={{
+                            <p className="text-sm text-foreground/80 leading-relaxed" dangerouslySetInnerHTML={{
                                 // Dangerously set HTML needed for bolding specific words easily without parsing
                                 __html: text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
                             }} />
@@ -37,7 +37,7 @@ export default function InsightsCard() {
                     ))}
                 </div>
 
-                <button className="w-full mt-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white text-sm font-medium transition-colors border border-white/5 flex items-center justify-center gap-2 group">
+                <button className="w-full mt-6 py-3 rounded-xl bg-muted/30 hover:bg-muted text-foreground text-sm font-medium transition-colors border border-white/5 flex items-center justify-center gap-2 group">
                     View All Recommendations
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>

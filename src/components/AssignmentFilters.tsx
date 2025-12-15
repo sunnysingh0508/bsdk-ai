@@ -23,23 +23,23 @@ export default function AssignmentFilters({
         <div className="flex flex-col md:flex-row gap-4 mb-6">
             {/* Search */}
             <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <input
                     type="text"
                     placeholder="Search assignments..."
                     onChange={(e) => onSearch(e.target.value)}
-                    className="w-full bg-[#181B23] border border-white/5 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#6366F1] transition-all"
+                    className="w-full bg-card border border-input rounded-xl pl-12 pr-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-all"
                 />
             </div>
 
             <div className="flex gap-3 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
                 {/* Filter Dropdown (Simulated with Select for simplicity) */}
                 <div className="relative min-w-[140px]">
-                    <Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <select
                         value={currentFilter}
                         onChange={(e) => onFilterChange(e.target.value)}
-                        className="w-full bg-[#181B23] border border-white/5 rounded-xl pl-10 pr-8 py-3 text-sm text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6366F1] appearance-none cursor-pointer"
+                        className="w-full bg-card border border-input rounded-xl pl-10 pr-8 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer"
                     >
                         <option value="All">All Status</option>
                         <option value="Pending">Pending</option>
@@ -54,11 +54,11 @@ export default function AssignmentFilters({
 
                 {/* Sort Dropdown */}
                 <div className="relative min-w-[140px]">
-                    <SortAsc className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <SortAsc className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <select
                         value={currentSort}
                         onChange={(e) => onSortChange(e.target.value)}
-                        className="w-full bg-[#181B23] border border-white/5 rounded-xl pl-10 pr-8 py-3 text-sm text-gray-300 focus:outline-none focus:ring-2 focus:ring-[#6366F1] appearance-none cursor-pointer"
+                        className="w-full bg-card border border-input rounded-xl pl-10 pr-8 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer"
                     >
                         <option value="DueDate">Due Date</option>
                         <option value="Priority">Priority</option>

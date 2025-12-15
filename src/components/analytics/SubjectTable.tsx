@@ -14,15 +14,15 @@ const subjects = [
 
 export default function SubjectTable() {
     return (
-        <div className="bg-[#181B23] rounded-[24px] border border-white/5 overflow-hidden">
-            <div className="p-6 border-b border-white/5">
-                <h3 className="text-lg font-bold text-white">Subject-wise Breakdown</h3>
+        <div className="bg-card rounded-[24px] border border-border overflow-hidden">
+            <div className="p-6 border-b border-border">
+                <h3 className="text-lg font-bold text-foreground">Subject-wise Breakdown</h3>
             </div>
 
             <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                     <thead>
-                        <tr className="bg-[#0E1017]/50 text-xs text-gray-500 uppercase tracking-wider">
+                        <tr className="bg-muted/50 text-xs text-muted-foreground uppercase tracking-wider">
                             <th className="p-4 font-medium pl-6">Subject</th>
                             <th className="p-4 font-medium">Attendance</th>
                             <th className="p-4 font-medium">Avg Grade</th>
@@ -30,10 +30,10 @@ export default function SubjectTable() {
                             <th className="p-4 font-medium">Risk Level</th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-white/5 text-sm text-gray-300">
+                    <tbody className="divide-y divide-border text-sm text-muted-foreground">
                         {subjects.map((sub, i) => (
-                            <tr key={i} className="hover:bg-white/5 transition-colors group">
-                                <td className="p-4 pl-6 font-medium text-white">{sub.name}</td>
+                            <tr key={i} className="hover:bg-muted/50 transition-colors group">
+                                <td className="p-4 pl-6 font-medium text-foreground">{sub.name}</td>
                                 <td className="p-4">
                                     <div className="flex items-center gap-2">
                                         <span className={cn(

@@ -33,7 +33,7 @@ export default function TimetableGrid({ schedule, viewMode, currentDayIndex, set
     }
 
     return (
-        <div className="flex-1 bg-[#181B23] rounded-[24px] border border-white/5 p-6 h-full overflow-hidden flex flex-col">
+        <div className="flex-1 bg-card rounded-[24px] border border-border p-6 h-full overflow-hidden flex flex-col">
 
             {/* Header */}
             <div className="flex items-center justify-between mb-6">

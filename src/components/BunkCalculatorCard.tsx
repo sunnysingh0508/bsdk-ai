@@ -116,21 +116,21 @@ export default function BunkCalculatorCard() {
     };
 
     return (
-        <div className="w-full max-w-md mx-auto p-6 md:p-8 rounded-[24px] bg-[#181B23] text-white shadow-xl border border-white/5 relative overflow-hidden">
+        <div className="w-full max-w-md mx-auto p-6 md:p-8 rounded-[24px] bg-card text-foreground shadow-xl border border-border relative overflow-hidden">
 
             {/* Header */}
             <div className="flex items-center gap-3 mb-2">
-                <h1 className="text-2xl font-bold font-heading text-white">Bunk Calculator</h1>
-                <Calculator className="w-6 h-6 text-[#6366F1]" />
+                <h1 className="text-2xl font-bold font-heading text-foreground">Bunk Calculator</h1>
+                <Calculator className="w-6 h-6 text-primary" />
             </div>
-            <p className="text-sm text-gray-400 mb-8 font-sans">
+            <p className="text-sm text-muted-foreground mb-8 font-sans">
                 Calculate how many classes you can safely bunk without falling below the required attendance percentage.
             </p>
 
             {/* Inputs */}
             <div className="space-y-6 mb-8">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
                         Classes Attended
                     </label>
                     <input
@@ -138,12 +138,12 @@ export default function BunkCalculatorCard() {
                         value={attended}
                         onChange={(e) => setAttended(e.target.value === "" ? "" : Number(e.target.value))}
                         placeholder="e.g. 22"
-                        className="w-full bg-[#0E1017] border border-gray-700 rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-[#6366F1] transition-all placeholder-gray-600 appearance-none"
+                        className="w-full bg-background border border-input rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder-muted-foreground appearance-none"
                     />
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
                         Total Classes Conducted
                     </label>
                     <input
@@ -151,12 +151,12 @@ export default function BunkCalculatorCard() {
                         value={total}
                         onChange={(e) => setTotal(e.target.value === "" ? "" : Number(e.target.value))}
                         placeholder="e.g. 25"
-                        className="w-full bg-[#0E1017] border border-gray-700 rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-[#6366F1] transition-all placeholder-gray-600 appearance-none"
+                        className="w-full bg-background border border-input rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder-muted-foreground appearance-none"
                     />
                 </div>
 
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
                         Required Attendance Percentage
                     </label>
                     <div className="relative">
@@ -166,9 +166,9 @@ export default function BunkCalculatorCard() {
                             onChange={(e) => setRequired(Number(e.target.value))}
                             min="0"
                             max="100"
-                            className="w-full bg-[#0E1017] border border-gray-700 rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-[#6366F1] transition-all placeholder-gray-600 appearance-none pr-12"
+                            className="w-full bg-background border border-input rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder-muted-foreground appearance-none pr-12"
                         />
-                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">%</span>
+                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground font-medium">%</span>
                     </div>
 
                 </div>
@@ -185,7 +185,7 @@ export default function BunkCalculatorCard() {
             {/* Results */}
             {result && !error && (
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <div className="bg-[#0E1017] rounded-2xl p-6 border border-white/5 relative overflow-hidden">
+                    <div className="bg-background rounded-2xl p-6 border border-border relative overflow-hidden">
                         {/* Visual Indicator Background Glow */}
                         <div className={cn("absolute top-0 right-0 w-32 h-32 blur-[60px] opacity-20 rounded-full pointer-events-none transition-colors duration-500",
                             result.status === "SAFE" ? "bg-[#3EF084]" :
@@ -193,10 +193,10 @@ export default function BunkCalculatorCard() {
                         )}></div>
 
                         <div className="relative z-10 text-center mb-6">
-                            <span className="text-sm uppercase tracking-wider text-gray-500 font-semibold mb-1 block">Safe Bunks Left</span>
+                            <span className="text-sm uppercase tracking-wider text-muted-foreground font-semibold mb-1 block">Safe Bunks Left</span>
                             <div className={cn("text-6xl font-bold font-heading transition-colors duration-300",
-                                result.status === "SAFE" ? "text-white" : // Keep number white or colored? User said "Badge color depends on result", number usually neutral or emphasis. Let's keep white for readability on dark, or matching status. User said "Safe Bunks Left: Big bold number". Let's use white for contrast.
-                                    "text-white"
+                                result.status === "SAFE" ? "text-foreground" : // Keep number white or colored? User said "Badge color depends on result", number usually neutral or emphasis. Let's keep white for readability on dark, or matching status. User said "Safe Bunks Left: Big bold number". Let's use white for contrast.
+                                    "text-foreground"
                             )}>
                                 {result.safeBunks < 0 ? 0 : result.safeBunks}
                                 {/* 
@@ -220,10 +220,10 @@ export default function BunkCalculatorCard() {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-between relative z-10 border-t border-white/10 pt-4">
+                        <div className="flex items-center justify-between relative z-10 border-t border-border pt-4">
                             <div>
-                                <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Current</div>
-                                <div className="text-xl font-bold text-white">{result.currentAttendance}%</div>
+                                <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Current</div>
+                                <div className="text-xl font-bold text-foreground">{result.currentAttendance}%</div>
                             </div>
 
                             <div className={cn("px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5", getStatusBg(result.status), getStatusColor(result.status))}>
@@ -231,8 +231,8 @@ export default function BunkCalculatorCard() {
                             </div>
 
                             <div className="text-right">
-                                <div className="text-xs text-gray-500 uppercase tracking-wide mb-1">Required</div>
-                                <div className="text-xl font-bold text-white">{required}%</div>
+                                <div className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Required</div>
+                                <div className="text-xl font-bold text-foreground">{required}%</div>
                             </div>
                         </div>
                     </div>

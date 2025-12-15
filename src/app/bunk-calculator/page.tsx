@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function BunkCalculatorPage() {
     return (
-        <main className="min-h-screen bg-[#0E1017] flex items-center justify-center p-4 md:p-6">
+        <main className="min-h-screen bg-background flex items-center justify-center p-4 md:p-6">
             <div className="w-full max-w-2xl animate-in fade-in zoom-in duration-500">
                 <BunkCalculatorCard />
             </div>

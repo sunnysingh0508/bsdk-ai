@@ -111,18 +111,18 @@ export default function TimetableGeneratorPage() {
 
 
     return (
-        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
             <div className="max-w-[1600px] mx-auto h-[calc(100vh-100px)] flex flex-col">
 
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-3">
-                        <div className="p-2 bg-[#6366F1]/10 rounded-lg">
-                            <CalendarDays className="w-8 h-8 text-[#6366F1]" />
+                        <div className="p-2 bg-primary/10 rounded-lg">
+                            <CalendarDays className="w-8 h-8 text-primary" />
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold font-heading text-white">Timetable Generator</h1>
-                            <p className="text-gray-400">Generate a personalized daily or weekly timetable based on your subjects, available hours, and study preferences.</p>
+                            <h1 className="text-3xl font-bold font-heading text-foreground">Timetable Generator</h1>
+                            <p className="text-muted-foreground">Generate a personalized daily or weekly timetable based on your subjects, available hours, and study preferences.</p>
                         </div>
                     </div>
 

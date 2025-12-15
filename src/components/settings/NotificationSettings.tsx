@@ -20,14 +20,14 @@ export default function NotificationSettings() {
     const renderToggle = (key: keyof typeof toggles, label: string, desc: string) => (
         <div className="flex items-center justify-between py-1">
             <div>
-                <p className="text-sm font-medium text-white">{label}</p>
-                <p className="text-xs text-gray-500">{desc}</p>
+                <p className="text-sm font-medium text-foreground">{label}</p>
+                <p className="text-xs text-muted-foreground">{desc}</p>
             </div>
             <button
                 onClick={() => toggle(key)}
                 className={cn(
                     "w-11 h-6 rounded-full transition-colors relative",
-                    toggles[key] ? "bg-[#6366F1]" : "bg-white/10"
+                    toggles[key] ? "bg-primary" : "bg-muted"
                 )}
             >
                 <div className={cn(
@@ -39,10 +39,10 @@ export default function NotificationSettings() {
     );
 
     return (
-        <div className="bg-[#181B23] rounded-[24px] p-6 border border-white/5 space-y-6">
+        <div className="bg-card rounded-[24px] p-6 border border-border space-y-6">
             <div className="flex items-center gap-2 mb-2">
                 <Bell className="w-5 h-5 text-[#F7D25D]" />
-                <h2 className="text-lg font-bold text-white">Notifications</h2>
+                <h2 className="text-lg font-bold text-foreground">Notifications</h2>
             </div>
 
             <div className="space-y-4">
@@ -50,7 +50,7 @@ export default function NotificationSettings() {
                 {renderToggle('attendance', 'Attendance Alerts', 'Daily summary of attendance updates.')}
                 {renderToggle('lowAttendance', 'Low Attendance Warning', 'Alert when dropping below safe limit.')}
                 {renderToggle('timetable', 'Timetable Changes', 'Notify if a class is rescheduled.')}
-                <div className="h-px bg-white/5 my-2" />
+                <div className="h-px bg-border my-2" />
                 {renderToggle('weeklySummary', 'Weekly Summary Email', 'Receive a report every Sunday evening.')}
             </div>
         </div>

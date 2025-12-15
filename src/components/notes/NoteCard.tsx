@@ -30,7 +30,7 @@ export default function NoteCard({ note, viewMode, onPreview, onDelete }: NoteCa
         return (
             <div
                 onClick={() => onPreview(note)}
-                className="group flex items-center gap-4 p-4 bg-[#181B23] border border-white/5 rounded-xl hover:bg-[#1C2029] hover:border-white/10 transition-all cursor-pointer"
+                className="group flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:bg-muted/50 hover:border-border/80 transition-all cursor-pointer"
             >
                 <div className={cn(
                     "p-2.5 rounded-lg shrink-0",
@@ -41,8 +41,8 @@ export default function NoteCard({ note, viewMode, onPreview, onDelete }: NoteCa
 
                 <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
                     <div className="md:col-span-2">
-                        <h3 className="text-sm font-bold text-white truncate">{note.title}</h3>
-                        <p className="text-xs text-gray-500 truncate">{note.tags.join(', ')}</p>
+                        <h3 className="text-sm font-bold text-foreground truncate">{note.title}</h3>
+                        <p className="text-xs text-muted-foreground truncate">{note.tags.join(', ')}</p>
                     </div>
                     <div className="hidden md:block">
                         <span className={cn(
@@ -52,7 +52,7 @@ export default function NoteCard({ note, viewMode, onPreview, onDelete }: NoteCa
                             {note.subject}
                         </span>
                     </div>
-                    <div className="hidden md:flex flex-col items-end text-xs text-gray-500">
+                    <div className="hidden md:flex flex-col items-end text-xs text-muted-foreground">
                         <span>{note.date}</span>
                         <span>{note.size}</span>
                     </div>
@@ -77,9 +77,9 @@ export default function NoteCard({ note, viewMode, onPreview, onDelete }: NoteCa
     }
 
     return (
-        <div className="group bg-[#181B23] border border-white/5 rounded-[24px] overflow-hidden hover:border-white/10 hover:-translate-y-1 transition-all duration-300">
+        <div className="group bg-card border border-border rounded-[24px] overflow-hidden hover:border-border/80 hover:-translate-y-1 transition-all duration-300">
             {/* Preview Area */}
-            <div className="relative aspect-[4/3] bg-[#0E1017] p-6 flex items-center justify-center overflow-hidden cursor-pointer" onClick={() => onPreview(note)}>
+            <div className="relative aspect-[4/3] bg-muted/50 p-6 flex items-center justify-center overflow-hidden cursor-pointer" onClick={() => onPreview(note)}>
                 {/* Mock Preview Content */}
                 <div className="w-full h-full bg-white/5 rounded-xl border border-white/5 flex flex-col p-4 gap-2 opacity-50 group-hover:opacity-70 transition-opacity">
                     <div className="h-2 w-3/4 bg-white/10 rounded-full" />
@@ -109,7 +109,7 @@ export default function NoteCard({ note, viewMode, onPreview, onDelete }: NoteCa
             <div className="p-5">
                 <div className="flex justify-between items-start mb-2">
                     <div className="min-w-0 pr-2">
-                        <h3 className="text-base font-bold text-white truncate mb-1" title={note.title}>{note.title}</h3>
+                        <h3 className="text-base font-bold text-foreground truncate mb-1" title={note.title}>{note.title}</h3>
                         <span className={cn(
                             "inline-block text-[10px] font-medium px-2 py-0.5 rounded-full border mb-2",
                             getTagColor(note.subject)
@@ -127,24 +127,24 @@ export default function NoteCard({ note, viewMode, onPreview, onDelete }: NoteCa
 
                 <div className="flex flex-wrap gap-1.5 mb-4 max-h-[44px] overflow-hidden">
                     {note.tags.map(tag => (
-                        <span key={tag} className="text-[10px] text-gray-400 bg-white/5 px-2 py-0.5 rounded-md">
+                        <span key={tag} className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded-md">
                             #{tag}
                         </span>
                     ))}
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                    <span className="text-[11px] text-gray-500">{note.date}</span>
+                <div className="flex items-center justify-between pt-4 border-t border-border">
+                    <span className="text-[11px] text-muted-foreground">{note.date}</span>
                     <div className="flex gap-1">
                         <button
                             onClick={() => onDelete(note.id)}
-                            className="p-2 rounded-lg hover:bg-white/5 text-gray-400 hover:text-red-400 transition-colors"
+                            className="p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-red-400 transition-colors"
                             title="Delete"
                         >
                             <Trash2 className="w-4 h-4" />
                         </button>
                         <button
-                            className="p-2 rounded-lg hover:bg-[#6366F1]/10 text-gray-400 hover:text-[#6366F1] transition-colors"
+                            className="p-2 rounded-lg hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
                             title="Download"
                         >
                             <Download className="w-4 h-4" />

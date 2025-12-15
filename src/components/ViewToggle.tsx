@@ -9,7 +9,7 @@ interface ViewToggleProps {
 
 export default function ViewToggle({ viewMode, setViewMode }: ViewToggleProps) {
     return (
-        <div className="flex bg-[#181B23] p-1 rounded-xl border border-white/5">
+        <div className="flex bg-card p-1 rounded-xl border border-border">
             <button
                 onClick={() => setViewMode('Daily')}
                 className={cn(

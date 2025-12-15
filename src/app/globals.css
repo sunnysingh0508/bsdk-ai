@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* BSDK AI Color Palette */
+  /* BSDK AI Color Palette - Light Mode */
   --background: #F8F9FC;
   --foreground: #0f172a;
   /* Slate 900 */
@@ -29,8 +29,66 @@
   --ring: #6366F1;
 
   /* Font Variables (mapped from layout.tsx) */
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-dm-sans);
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-poppins);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1A1D1D;
+    /* Deep Charcoal */
+    --foreground: #FFFFFF;
+    /* White */
+
+    --primary: #D7FEFA;
+    /* Mint */
+    --primary-foreground: #1A1D1D;
+    /* Charcoal Text */
+
+    --secondary: #2B2E2E;
+    /* Lighter Charcoal */
+    --secondary-foreground: #D7FEFA;
+    /* Mint Text */
+
+    --accent: #D7FEFA;
+    /* Mint Accent */
+    --accent-foreground: #1A1D1D;
+
+    --card: #2B2E2E;
+    /* Lighter Charcoal */
+    --card-foreground: #FFFFFF;
+
+    --muted: #2B2E2E;
+    --muted-foreground: #a1a1aa;
+
+    --border: #2B2E2E;
+    --input: #2B2E2E;
+    --ring: #D7FEFA;
+  }
+}
+
+.dark {
+  --background: #1A1D1D;
+  --foreground: #FFFFFF;
+
+  --primary: #D7FEFA;
+  --primary-foreground: #1A1D1D;
+
+  --secondary: #2B2E2E;
+  --secondary-foreground: #D7FEFA;
+
+  --accent: #D7FEFA;
+  --accent-foreground: #1A1D1D;
+
+  --card: #2B2E2E;
+  --card-foreground: #FFFFFF;
+
+  --muted: #2B2E2E;
+  --muted-foreground: #a1a1aa;
+
+  --border: #2B2E2E;
+  --input: #2B2E2E;
+  --ring: #D7FEFA;
 }
 
 @theme inline {

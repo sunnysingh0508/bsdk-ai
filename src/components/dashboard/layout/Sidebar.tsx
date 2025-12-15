@@ -48,7 +48,7 @@ export function Sidebar() {
     const pathname = usePathname();
 
     return (
-        <div className="hidden h-screen w-64 flex-col border-r bg-white py-6 dark:bg-zinc-900 lg:flex">
+        <div className="hidden h-screen w-64 flex-col border-r border-border bg-card py-6 lg:flex">
             {/* Logo */}
             <div className="px-6 pb-6">
                 <Link href="/dashboard" className="flex items-center gap-2">
@@ -82,14 +82,14 @@ export function Sidebar() {
                                             className={cn(
                                                 "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                                                 isActive
-                                                    ? "bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-600 dark:from-indigo-900/20 dark:to-purple-900/20 dark:text-indigo-400"
-                                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                                                    ? "bg-primary/10 text-primary"
+                                                    : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                                             )}
                                         >
                                             <item.icon
                                                 className={cn(
                                                     "h-4 w-4",
-                                                    isActive ? "text-indigo-600 dark:text-indigo-400" : "text-muted-foreground"
+                                                    isActive ? "text-primary" : "text-muted-foreground"
                                                 )}
                                             />
                                             {item.name}
@@ -120,7 +120,7 @@ export function Sidebar() {
                                 <HelpCircle className="h-4 w-4 text-muted-foreground" />
                                 Help & Support
                             </Link>
-                            <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                            <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors">
                                 <LogOut className="h-4 w-4" />
                                 Logout
                             </button>
@@ -130,9 +130,9 @@ export function Sidebar() {
             </div>
 
             {/* User Mini Profile */}
-            <div className="border-t px-4 py-4">
-                <div className="flex items-center gap-3 rounded-lg bg-gray-50 p-3 dark:bg-zinc-800">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+            <div className="border-t border-border px-4 py-4">
+                <div className="flex items-center gap-3 rounded-lg bg-muted/30 p-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
                         <User className="h-5 w-5" />
                     </div>
                     <div className="flex-1 overflow-hidden">

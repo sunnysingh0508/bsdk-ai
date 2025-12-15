@@ -45,7 +45,7 @@ export function ForgotPasswordForm() {
         return (
             <div className="mx-auto w-full max-w-[400px] space-y-6 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <div className="flex justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
                         <Mail className="h-8 w-8" />
                     </div>
                 </div>
@@ -58,7 +58,7 @@ export function ForgotPasswordForm() {
                     </p>
                 </div>
                 <Link href="/login" className="block w-full">
-                    <Button size="lg" className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:to-purple-600 shadow-lg shadow-indigo-200/50">
+                    <Button size="lg" className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-lg shadow-purple-500/20">
                         Return to Login
                     </Button>
                 </Link>
@@ -69,7 +69,7 @@ export function ForgotPasswordForm() {
     return (
         <div className="mx-auto w-full max-w-[400px] space-y-6 animate-in fade-in duration-500">
             <div className="space-y-2 text-center">
-                <h1 className="text-3xl font-bold tracking-tight text-foreground bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold tracking-tight text-foreground">
                     Forgot Your Password?
                 </h1>
                 <p className="text-muted-foreground">
@@ -88,7 +88,7 @@ export function ForgotPasswordForm() {
                 />
 
                 <Button
-                    className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:to-purple-600 shadow-lg shadow-indigo-200/50 mt-2"
+                    className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-lg shadow-purple-500/20 mt-2"
                     size="lg"
                     disabled={isLoading || !isValid}
                 >
@@ -112,7 +112,7 @@ export function ForgotPasswordForm() {
                 </Link>
                 <Link
                     href="/contact"
-                    className="text-indigo-500 hover:text-indigo-600 font-medium"
+                    className="text-primary hover:text-primary/90 font-medium"
                 >
                     Need help?
                 </Link>

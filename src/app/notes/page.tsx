@@ -55,19 +55,19 @@ export default function NotesPage() {
     };
 
     return (
-        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
             <div className="max-w-7xl mx-auto animate-in fade-in duration-500">
 
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-[#6366F1]/10 rounded-lg">
-                        <Files className="w-8 h-8 text-[#6366F1]" />
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                        <Files className="w-8 h-8 text-primary" />
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold font-heading text-white">Notes Library</h1>
+                        <h1 className="text-3xl font-bold font-heading text-foreground">Notes Library</h1>
                     </div>
                 </div>
-                <p className="text-gray-400 mb-8 ml-14">
+                <p className="text-muted-foreground mb-8 ml-14">
                     Access, organize, and manage all your scanned and uploaded notes in one place.
                 </p>
 

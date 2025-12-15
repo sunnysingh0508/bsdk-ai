@@ -35,8 +35,8 @@ export default function ReportSelector({ selectedReportId, onSelect }: ReportSel
                     className={cn(
                         "relative flex flex-col items-start p-5 rounded-[20px] border transition-all duration-300 text-left group",
                         selectedReportId === report.id
-                            ? "bg-[#181B23] border-[#6366F1] shadow-[0_0_20px_-5px_rgba(99,102,241,0.3)]"
-                            : "bg-[#181B23] border-white/5 hover:border-white/10 hover:bg-[#1C2029]"
+                            ? "bg-card border-primary shadow-[0_0_20px_-5px_rgba(99,102,241,0.3)]"
+                            : "bg-card border-border hover:border-border/80 hover:bg-muted/50"
                     )}
                 >
                     <div
@@ -52,11 +52,11 @@ export default function ReportSelector({ selectedReportId, onSelect }: ReportSel
                     </div>
                     <h3 className={cn(
                         "font-bold mb-1 transition-colors",
-                        selectedReportId === report.id ? "text-white" : "text-gray-300 group-hover:text-white"
+                        selectedReportId === report.id ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
                     )}>
                         {report.title}
                     </h3>
-                    <p className="text-xs text-gray-500 leading-relaxed font-medium">
+                    <p className="text-xs text-muted-foreground leading-relaxed font-medium">
                         {report.description}
                     </p>
                 </button>

@@ -20,18 +20,18 @@ export function SummaryBox({ totalCredits, currentCGPA, subjects }: SummaryBoxPr
 
     return (
         <div className="grid grid-cols-3 gap-4">
-            <div className="rounded-2xl bg-[#181B23] p-4 border border-white/5 text-center">
+            <div className="rounded-2xl bg-card p-4 border border-border text-center">
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Total Credits</div>
-                <div className="text-2xl font-bold text-white">{totalCredits}</div>
+                <div className="text-2xl font-bold text-foreground">{totalCredits}</div>
             </div>
-            <div className="rounded-2xl bg-[#181B23] p-4 border border-white/5 text-center">
+            <div className="rounded-2xl bg-card p-4 border border-border text-center">
                 <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Max Possible</div>
                 <div className="text-2xl font-bold text-green-400">{maxCGPA}</div>
             </div>
-            <div className="rounded-2xl bg-indigo-900/20 p-4 border border-indigo-500/20 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-indigo-500/10 blur-xl" />
-                <div className="text-xs text-indigo-300 uppercase tracking-wider mb-1 relative z-10">Predicted</div>
-                <div className="text-2xl font-bold text-indigo-400 relative z-10">{currentCGPA.toFixed(2)}</div>
+            <div className="rounded-2xl bg-primary/20 p-4 border border-primary/20 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-primary/10 blur-xl" />
+                <div className="text-xs text-primary uppercase tracking-wider mb-1 relative z-10">Predicted</div>
+                <div className="text-2xl font-bold text-primary relative z-10">{currentCGPA.toFixed(2)}</div>
             </div>
         </div>
     );
