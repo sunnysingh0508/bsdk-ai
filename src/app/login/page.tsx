@@ -28,7 +28,7 @@ export default function LoginPage() {
             </div>
 
             {/* Left Column - Form */}
-            <div className="flex h-full w-full flex-col justify-center px-4 lg:p-8 relative z-10 bg-background">
+            <div className="flex h-full w-full flex-col justify-center px-4 lg:p-8 relative z-10 bg-white dark:bg-zinc-900">
                 <LoginForm />
             </div>
 

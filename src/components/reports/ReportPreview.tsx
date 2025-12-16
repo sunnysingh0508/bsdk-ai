@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'; // Assumes you have this utility
 
 export default function ReportPreview() {
     return (
-        <div className="bg-card p-1 rounded-[24px] border border-border shadow-2xl shadow-black/50">
+        <div className="bg-[#181B23] p-1 rounded-[24px] border border-white/5 shadow-2xl shadow-black/50">
             <div className="w-full aspect-[1/1.4] bg-white rounded-[20px] overflow-hidden relative flex flex-col text-black p-8 md:p-12">
 
                 {/* Header */}

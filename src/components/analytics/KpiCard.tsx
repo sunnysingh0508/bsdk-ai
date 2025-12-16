@@ -28,9 +28,9 @@ export default function KpiCard({ title, value, change, trend, data, icon: Icon,
     const isPositive = trend === 'up';
 
     return (
-        <div className="relative overflow-hidden bg-card rounded-[24px] border border-border p-6 group hover:border-border/80 transition-colors">
+        <div className="relative overflow-hidden bg-[#181B23] rounded-[24px] border border-white/5 p-6 group hover:border-white/10 transition-colors">
             <div className="flex justify-between items-start mb-4">
-                <div className="p-3 rounded-2xl bg-muted/50 border border-border">
+                <div className="p-3 rounded-2xl bg-[#0E1017] border border-white/5">
                     <Icon className="w-6 h-6" style={{ color }} />
                 </div>
                 <div className={cn(
@@ -43,8 +43,8 @@ export default function KpiCard({ title, value, change, trend, data, icon: Icon,
             </div>
 
             <div className="mb-1">
-                <h3 className="text-3xl font-bold text-foreground tracking-tight">{value}</h3>
-                <p className="text-sm text-muted-foreground font-medium">{title}</p>
+                <h3 className="text-3xl font-bold text-white tracking-tight">{value}</h3>
+                <p className="text-sm text-gray-500 font-medium">{title}</p>
             </div>
 
             {/* Sparkline Overlay */}

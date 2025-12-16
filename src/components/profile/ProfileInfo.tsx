@@ -25,16 +25,16 @@ export default function ProfileInfo() {
     };
 
     return (
-        <div className="bg-card rounded-[24px] p-6 border border-border h-full">
+        <div className="bg-[#181B23] rounded-[24px] p-6 border border-white/5 h-full">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-lg font-bold text-foreground">Basic Information</h2>
+                <h2 className="text-lg font-bold text-white">Basic Information</h2>
                 <button
                     onClick={() => isEditing ? handleSave() : setIsEditing(true)}
                     className={cn(
                         "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all",
                         isEditing
-                            ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                            : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                            ? "bg-[#6366F1] text-white hover:bg-[#5558e6]"
+                            : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
                     )}
                 >
                     {isEditing ? <Save className="w-4 h-4" /> : <Edit2 className="w-4 h-4" />}
@@ -87,7 +87,7 @@ export default function ProfileInfo() {
                         onChange={handleChange}
                     />
                     <div className="space-y-2">
-                        <label className="text-xs text-muted-foreground font-medium flex items-center gap-2">
+                        <label className="text-xs text-gray-500 font-medium flex items-center gap-2">
                             <BookOpen className="w-3.5 h-3.5" />
                             Semester
                         </label>
@@ -96,12 +96,12 @@ export default function ProfileInfo() {
                                 name="semester"
                                 value={formData.semester}
                                 onChange={handleChange}
-                                className="w-full bg-background border border-input rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                                className="w-full bg-[#0E1017] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#6366F1]"
                             >
                                 {[1, 2, 3, 4, 5, 6, 7, 8].map(s => <option key={s} value={s}>Semester {s}</option>)}
                             </select>
                         ) : (
-                            <div className="px-4 py-2.5 rounded-xl bg-background border border-transparent text-sm text-muted-foreground">
+                            <div className="px-4 py-2.5 rounded-xl bg-[#0E1017] border border-transparent text-sm text-gray-300">
                                 Semester {formData.semester}
                             </div>
                         )}
@@ -115,7 +115,7 @@ export default function ProfileInfo() {
 function InputField({ icon: Icon, label, value, isEditing, onChange, name, readOnly }: any) {
     return (
         <div className="space-y-2">
-            <label className="text-xs text-muted-foreground font-medium flex items-center gap-2">
+            <label className="text-xs text-gray-500 font-medium flex items-center gap-2">
                 <Icon className="w-3.5 h-3.5" />
                 {label}
             </label>
@@ -125,12 +125,12 @@ function InputField({ icon: Icon, label, value, isEditing, onChange, name, readO
                     name={name}
                     value={value}
                     onChange={onChange}
-                    className="w-full bg-background border border-input rounded-xl px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full bg-[#0E1017] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#6366F1]"
                 />
             ) : (
                 <div className={cn(
-                    "px-4 py-2.5 rounded-xl bg-background border border-transparent text-sm",
-                    readOnly ? "text-muted-foreground cursor-not-allowed" : "text-foreground"
+                    "px-4 py-2.5 rounded-xl bg-[#0E1017] border border-transparent text-sm",
+                    readOnly ? "text-gray-500 cursor-not-allowed" : "text-gray-300"
                 )}>
                     {value}
                 </div>

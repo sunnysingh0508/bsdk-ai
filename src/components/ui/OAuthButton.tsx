@@ -14,7 +14,7 @@ export function OAuthButton({ provider, className, ...props }: OAuthButtonProps)
             className={cn(
                 "w-full font-medium transition-all duration-200 hover:shadow-md",
                 isGoogle
-                    ? "bg-card text-card-foreground hover:bg-muted/50 border-input"
+                    ? "bg-white text-gray-700 hover:bg-gray-50 border-gray-200"
                     : "bg-[#24292F] text-white hover:bg-[#24292F]/90 hover:text-white border-transparent",
                 className
             )}

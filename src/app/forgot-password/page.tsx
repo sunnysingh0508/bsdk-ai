@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ForgotPasswordPage() {
     return (
-        <div className="container relative min-h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 bg-background">
+        <div className="container relative min-h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0 bg-[#F8F9FC] dark:bg-zinc-900">
 
             {/* Mobile Logo Link */}
             <div className="absolute left-4 top-4 md:left-8 md:top-8 z-20">
@@ -28,12 +28,12 @@ export default function ForgotPasswordPage() {
             </div>
 
             {/* Left Column - Form */}
-            <div className="flex min-h-screen w-full flex-col justify-center px-4 py-12 lg:px-8 relative z-10 bg-background">
+            <div className="flex min-h-screen w-full flex-col justify-center px-4 py-12 lg:px-8 relative z-10 bg-[#F8F9FC]">
                 <ForgotPasswordForm />
             </div>
 
             {/* Right Column - Visual (Hidden on mobile) */}
-            <div className="relative hidden h-full flex-col bg-muted p-10 text-foreground lg:flex border-l border-border">
+            <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r border-l border-white/50">
                 <AuthVisual />
             </div>
         </div>

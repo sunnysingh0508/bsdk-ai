@@ -28,10 +28,10 @@ export function SubjectAttendanceCard({ data }: { data: SubjectData }) {
     }
 
     return (
-        <div className="rounded-[24px] bg-card p-5 border border-border shadow-lg relative overflow-hidden group hover:border-primary/50 transition-all">
+        <div className="rounded-[24px] bg-[#181B23] p-5 border border-white/5 shadow-lg relative overflow-hidden group hover:border-white/10 transition-all">
             {/* Header */}
             <div className="flex items-start justify-between mb-4">
-                <h3 className="font-semibold text-foreground truncate max-w-[140px]" title={data.subject}>
+                <h3 className="font-semibold text-white truncate max-w-[140px]" title={data.subject}>
                     {data.subject}
                 </h3>
                 <span className={cn("text-[10px] font-bold px-2 py-1 rounded-full border", statusBg)}>
@@ -53,18 +53,18 @@ export function SubjectAttendanceCard({ data }: { data: SubjectData }) {
             </div>
 
             {/* Counts Row */}
-            <div className="flex items-center justify-between text-xs text-muted-foreground border-t border-border pt-3">
+            <div className="flex items-center justify-between text-xs text-muted-foreground border-t border-white/5 pt-3">
                 <div className="flex flex-col">
                     <span className="mb-0.5">Attended</span>
-                    <span className="text-foreground font-medium">{data.attended}</span>
+                    <span className="text-white font-medium">{data.attended}</span>
                 </div>
                 <div className="flex flex-col text-right">
                     <span className="mb-0.5">Total</span>
-                    <span className="text-foreground font-medium">{data.total}</span>
+                    <span className="text-white font-medium">{data.total}</span>
                 </div>
                 <div className="flex flex-col text-right">
                     <span className="mb-0.5">Required</span>
-                    <span className="text-foreground font-medium">75%</span>
+                    <span className="text-white font-medium">75%</span>
                 </div>
             </div>
         </div>

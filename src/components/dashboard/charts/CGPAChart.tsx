@@ -10,7 +10,7 @@ export function CGPAChart({ cgpa }: { cgpa: number }) {
                 <svg className="h-full w-full rotate-[-90deg]" viewBox="0 0 100 100">
                     {/* Background Circle */}
                     <circle
-                        className="stroke-gray-100 dark:stroke-zinc-800"
+                        className="stroke-muted dark:stroke-muted"
                         cx="50"
                         cy="50"
                         r={radius}

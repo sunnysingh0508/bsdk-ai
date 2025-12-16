@@ -24,13 +24,13 @@ export function AttendanceWidget({ attendance }: { attendance: SubjectAttendance
                                 {item.percentage}%
                             </span>
                             {item.bunkable > 0 && (
-                                <span className="rounded bg-green-100 px-1 py-0.5 text-[10px] font-bold text-green-700">
+                                <span className="rounded bg-green-500/10 px-1 py-0.5 text-[10px] font-bold text-green-600 dark:text-green-400">
                                     {item.bunkable} safe bunks
                                 </span>
                             )}
                         </div>
                     </div>
-                    <div className="h-2 w-full rounded-full bg-gray-100">
+                    <div className="h-2 w-full rounded-full bg-muted">
                         <div
                             className={cn("h-full rounded-full transition-all duration-500", getZoneColor(item.percentage))}
                             style={{ width: `${item.percentage}%` }}

@@ -167,17 +167,17 @@ export default function AssignmentManagerPage() {
 
 
     return (
-        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-2">
-                    <h1 className="text-3xl font-bold font-heading text-foreground">Assignment Manager</h1>
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                        <ClipboardList className="w-6 h-6 text-primary" />
+                    <h1 className="text-3xl font-bold font-heading text-white">Assignment Manager</h1>
+                    <div className="p-2 bg-[#6366F1]/10 rounded-lg">
+                        <ClipboardList className="w-6 h-6 text-[#6366F1]" />
                     </div>
                 </div>
-                <p className="text-muted-foreground mb-8 max-w-2xl">
+                <p className="text-gray-400 mb-8 max-w-2xl">
                     Organize, track, and complete all your assignments before the deadline.
                 </p>
 
@@ -212,7 +212,7 @@ export default function AssignmentManagerPage() {
                             />
                         ))
                     ) : (
-                        <div className="col-span-full py-20 text-center text-muted-foreground border border-border rounded-3xl bg-muted/50">
+                        <div className="col-span-full py-20 text-center text-gray-500 border border-white/5 rounded-3xl bg-[#181B23]/50">
                             <p className="text-lg">No assignments found matching your filters.</p>
                         </div>
                     )}

@@ -57,12 +57,12 @@ export default function TimetableConfig({ config, setConfig, onGenerate, onReset
     };
 
     return (
-        <div className="bg-card rounded-[24px] p-6 border border-border space-y-8 h-full overflow-y-auto custom-scrollbar">
+        <div className="bg-[#181B23] rounded-[24px] p-6 border border-white/5 space-y-8 h-full overflow-y-auto custom-scrollbar">
 
             {/* 1. Subjects */}
             <div>
-                <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs">1</span>
+                <h3 className="font-bold text-white mb-4 flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-[#6366F1]/20 text-[#6366F1] flex items-center justify-center text-xs">1</span>
                     Subjects List
                 </h3>
 
@@ -73,13 +73,13 @@ export default function TimetableConfig({ config, setConfig, onGenerate, onReset
                         value={newSubject}
                         onChange={e => setNewSubject(e.target.value)}
                         placeholder="Subject Name"
-                        className="flex-1 bg-background border border-input rounded-xl px-4 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="flex-1 bg-[#0E1017] border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#6366F1]"
                         onKeyDown={e => e.key === 'Enter' && addSubject()}
                     />
                     <select
                         value={newPriority}
                         onChange={e => setNewPriority(e.target.value as any)}
-                        className="bg-background border border-input rounded-xl px-2 py-2 text-sm text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="bg-[#0E1017] border border-white/10 rounded-xl px-2 py-2 text-sm text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6366F1]"
                     >
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>

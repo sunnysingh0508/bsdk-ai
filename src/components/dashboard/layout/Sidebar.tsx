@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/Logo";
+import { useState } from "react";
 import {
     LayoutDashboard,
     GraduationCap,
@@ -19,7 +20,9 @@ import {
     CheckCircle,
     HelpCircle,
     Files,
-    FileText
+    FileText,
+    ChevronLeft,
+    ChevronRight
 } from "lucide-react";
 
 const sidebarItems = [
@@ -46,32 +49,51 @@ const sidebarItems = [
 
 export function Sidebar() {
     const pathname = usePathname();
+    const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <div className="hidden h-screen w-64 flex-col border-r border-border bg-card py-6 lg:flex">
+        <div
+            className={cn(
+                "hidden h-screen flex-col border-r border-border bg-card/60 backdrop-blur-xl py-6 transition-all duration-300 lg:flex relative",
+                collapsed ? "w-20" : "w-64"
+            )}
+        >
+            {/* Collapse Toggle Button */}
+            <button
+                onClick={() => setCollapsed(!collapsed)}
+                className="absolute -right-3 top-9 z-50 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-md hover:bg-muted hover:text-primary transition-all"
+                title={collapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+            >
+                {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+            </button>
+
             {/* Logo */}
-            <div className="px-6 pb-6">
+            <div className={cn("px-6 pb-6 flex items-center", collapsed ? "justify-center px-0" : "")}>
                 <Link href="/dashboard" className="flex items-center gap-2">
                     <Logo />
-                    <div className="flex flex-col">
-                        <span className="text-xl font-bold tracking-tight text-foreground leading-none">
-                            BSDK AI
-                        </span>
-                        <span className="text-[10px] font-medium text-muted-foreground leading-none">
-                            BrightSight Student Development Kit – AI
-                        </span>
-                    </div>
+                    {!collapsed && (
+                        <div className="flex flex-col animate-in fade-in duration-200">
+                            <span className="text-xl font-bold tracking-tight text-foreground leading-none">
+                                BSDK AI
+                            </span>
+                            <span className="text-[10px] font-medium text-muted-foreground leading-none">
+                                BrightSight Student Development Kit – AI
+                            </span>
+                        </div>
+                    )}
                 </Link>
             </div>
 
             {/* Navigation */}
-            <div className="flex-1 overflow-y-auto px-4 py-4">
+            <div className="flex-1 overflow-y-auto px-4 py-4 scrollbar-none">
                 <nav className="space-y-6">
                     {sidebarItems.map((group) => (
                         <div key={group.category}>
-                            <h3 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                                {group.category}
-                            </h3>
+                            {!collapsed && (
+                                <h3 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground animate-in fade-in">
+                                    {group.category}
+                                </h3>
+                            )}
                             <div className="space-y-1">
                                 {group.items.map((item) => {
                                     const isActive = pathname === item.href;
@@ -79,20 +101,23 @@ export function Sidebar() {
                                         <Link
                                             key={item.href}
                                             href={item.href}
+                                            title={collapsed ? item.name : ""}
                                             className={cn(
-                                                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                                                "flex items-center rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                                                collapsed ? "justify-center px-2" : "gap-3",
                                                 isActive
-                                                    ? "bg-primary/10 text-primary"
-                                                    : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                                    ? "bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-600 dark:from-indigo-900/20 dark:to-purple-900/20 dark:text-indigo-400"
+                                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
                                             )}
                                         >
                                             <item.icon
                                                 className={cn(
-                                                    "h-4 w-4",
-                                                    isActive ? "text-primary" : "text-muted-foreground"
+                                                    "flex-shrink-0",
+                                                    collapsed ? "h-5 w-5" : "h-4 w-4",
+                                                    isActive ? "text-indigo-600 dark:text-indigo-400" : "text-muted-foreground"
                                                 )}
                                             />
-                                            {item.name}
+                                            {!collapsed && <span>{item.name}</span>}
                                         </Link>
                                     );
                                 })}
@@ -102,27 +127,43 @@ export function Sidebar() {
 
                     {/* Bottom Group */}
                     <div>
-                        <h3 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                            Settings
-                        </h3>
+                        {!collapsed && (
+                            <h3 className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground animate-in fade-in">
+                                Settings
+                            </h3>
+                        )}
                         <div className="space-y-1">
                             <Link
                                 href="/settings"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                                title={collapsed ? "Settings" : ""}
+                                className={cn(
+                                    "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors",
+                                    collapsed ? "justify-center px-2" : "gap-3"
+                                )}
                             >
-                                <Settings className="h-4 w-4 text-muted-foreground" />
-                                Settings
+                                <Settings className={cn("text-muted-foreground flex-shrink-0", collapsed ? "h-5 w-5" : "h-4 w-4")} />
+                                {!collapsed && <span>Settings</span>}
                             </Link>
                             <Link
                                 href="/help"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                                title={collapsed ? "Help & Support" : ""}
+                                className={cn(
+                                    "flex items-center rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors",
+                                    collapsed ? "justify-center px-2" : "gap-3"
+                                )}
                             >
-                                <HelpCircle className="h-4 w-4 text-muted-foreground" />
-                                Help & Support
+                                <HelpCircle className={cn("text-muted-foreground flex-shrink-0", collapsed ? "h-5 w-5" : "h-4 w-4")} />
+                                {!collapsed && <span>Help & Support</span>}
                             </Link>
-                            <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors">
-                                <LogOut className="h-4 w-4" />
-                                Logout
+                            <button
+                                title={collapsed ? "Logout" : ""}
+                                className={cn(
+                                    "flex w-full items-center rounded-lg px-3 py-2 text-left text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors",
+                                    collapsed ? "justify-center px-2" : "gap-3"
+                                )}
+                            >
+                                <LogOut className={cn("flex-shrink-0", collapsed ? "h-5 w-5" : "h-4 w-4")} />
+                                {!collapsed && <span>Logout</span>}
                             </button>
                         </div>
                     </div>
@@ -131,14 +172,16 @@ export function Sidebar() {
 
             {/* User Mini Profile */}
             <div className="border-t border-border px-4 py-4">
-                <div className="flex items-center gap-3 rounded-lg bg-muted/30 p-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <div className={cn("flex items-center rounded-lg bg-muted/50 p-3", collapsed ? "justify-center p-2" : "gap-3")}>
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
                         <User className="h-5 w-5" />
                     </div>
-                    <div className="flex-1 overflow-hidden">
-                        <p className="truncate text-sm font-medium text-foreground">Sunny Singh</p>
-                        <p className="truncate text-xs text-muted-foreground">sunny@bsdk.ai</p>
-                    </div>
+                    {!collapsed && (
+                        <div className="flex-1 overflow-hidden animate-in fade-in">
+                            <p className="truncate text-sm font-medium text-foreground">Sunny Singh</p>
+                            <p className="truncate text-xs text-muted-foreground">sunny@bsdk.ai</p>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

@@ -26,8 +26,8 @@ export default function TrendChart({ title, data, labels, color, baseline }: Tre
     const baselineY = baseline ? 100 - ((baseline - min) / range) * 80 : null;
 
     return (
-        <div className="bg-card rounded-[24px] border border-border p-6 h-full flex flex-col">
-            <h3 className="text-lg font-bold text-foreground mb-6">{title}</h3>
+        <div className="bg-[#181B23] rounded-[24px] border border-white/5 p-6 h-full flex flex-col">
+            <h3 className="text-lg font-bold text-white mb-6">{title}</h3>
 
             <div className="flex-1 min-h-[200px] relative w-full">
                 {/* Chart Area */}
@@ -82,9 +82,10 @@ export default function TrendChart({ title, data, labels, color, baseline }: Tre
                             <circle
                                 key={i}
                                 cx={x} cy={y} r="1.5"
-                                className="opacity-0 hover:opacity-100 transition-opacity cursor-pointer fill-card"
+                                fill="#181B23"
                                 stroke={color}
                                 strokeWidth="1"
+                                className="opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
                             >
                                 <title>{labels[i]}: {d}</title>
                             </circle>
@@ -93,7 +94,7 @@ export default function TrendChart({ title, data, labels, color, baseline }: Tre
                 </svg>
 
                 {/* X Axis Labels */}
-                <div className="flex justify-between mt-2 text-[10px] text-muted-foreground uppercase tracking-wider font-medium">
+                <div className="flex justify-between mt-2 text-[10px] text-gray-500 uppercase tracking-wider font-medium">
                     {labels.map((label, i) => (
                         <span key={i} className={cn(
                             i === 0 || i === labels.length - 1 || i % 2 === 0 ? "opacity-100" : "opacity-0 md:opacity-50"

@@ -18,9 +18,9 @@ export function AssignmentCard({ title, subject, due, status, progress }: Assign
     };
 
     return (
-        <div className="rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md text-card-foreground flex flex-col gap-3">
+        <div className="rounded-xl border border-border bg-card p-4 shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
             <div className="flex items-start justify-between">
-                <Badge variant="outline" className="bg-gray-50 text-xs font-normal text-muted-foreground">{subject}</Badge>
+                <Badge variant="outline" className="bg-muted/50 text-xs font-normal text-muted-foreground">{subject}</Badge>
                 <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${statusColor[status]}`}>
                     {status}
                 </span>
@@ -39,7 +39,7 @@ export function AssignmentCard({ title, subject, due, status, progress }: Assign
                     <span>Progress</span>
                     <span>{progress}%</span>
                 </div>
-                <div className="h-1.5 w-full rounded-full bg-gray-100">
+                <div className="h-1.5 w-full rounded-full bg-muted">
                     <div
                         className="h-full rounded-full bg-indigo-500 transition-all duration-500"
                         style={{ width: `${progress}%` }}

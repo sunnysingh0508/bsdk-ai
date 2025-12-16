@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 export default function ProfilePage() {
     return (
-        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
             <div className="max-w-4xl mx-auto animate-in fade-in duration-500">
 
                 <ProfileHeader />
@@ -28,18 +28,18 @@ export default function ProfilePage() {
                     <SecuritySummary />
 
                     {/* Actions */}
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 rounded-[24px] border border-border">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 rounded-[24px] border border-white/5">
                         <div className="flex items-center gap-4">
-                            <button className="flex items-center gap-2 px-4 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors text-sm font-medium">
+                            <button className="flex items-center gap-2 px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-sm font-medium">
                                 <LogOut className="w-4 h-4" />
                                 Logout
                             </button>
-                            <Link href="/settings" className="px-4 py-2 rounded-xl text-primary hover:text-primary/90 hover:bg-primary/10 transition-colors text-sm font-medium">
+                            <Link href="/settings" className="px-4 py-2 rounded-xl text-[#6366F1] hover:text-[#5558e6] hover:bg-[#6366F1]/10 transition-colors text-sm font-medium">
                                 View Settings
                             </Link>
                         </div>
 
-                        <button className="flex items-center gap-2 px-4 py-2 rounded-xl text-destructive hover:bg-destructive/10 transition-colors text-sm font-medium">
+                        <button className="flex items-center gap-2 px-4 py-2 rounded-xl text-red-500 hover:bg-red-500/10 transition-colors text-sm font-medium">
                             <Trash2 className="w-4 h-4" />
                             Delete Account
                         </button>

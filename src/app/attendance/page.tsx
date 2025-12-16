@@ -27,7 +27,7 @@ export default function AttendancePage() {
     );
 
     return (
-        <div className="flex h-screen w-full bg-background text-foreground overflow-hidden">
+        <div className="flex h-screen w-full bg-[#0D0F15] text-white overflow-hidden">
             <Sidebar />
             <div className="flex flex-1 flex-col overflow-hidden">
                 <Navbar />
@@ -40,7 +40,7 @@ export default function AttendancePage() {
                                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 text-green-400">
                                     <CalendarCheck className="h-5 w-5" />
                                 </div>
-                                <h1 className="text-3xl font-bold tracking-tight text-foreground">
+                                <h1 className="text-3xl font-bold tracking-tight text-white">
                                     Attendance Tracker
                                 </h1>
                             </div>
@@ -59,7 +59,7 @@ export default function AttendancePage() {
 
                         {/* Subject-wise Attendance Grid */}
                         <div className="space-y-4">
-                            <h2 className="text-lg font-semibold text-foreground">Subject Attendance Overview</h2>
+                            <h2 className="text-lg font-semibold text-white">Subject Attendance Overview</h2>
                             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                                 {attendanceData.map((item) => (
                                     <SubjectAttendanceCard key={item.id} data={item} />

@@ -48,7 +48,7 @@ export default function CGPAPredictorPage() {
     };
 
     return (
-        <div className="flex h-screen w-full bg-background text-foreground overflow-hidden">
+        <div className="flex h-screen w-full bg-[#0D0F15] text-white overflow-hidden">
             <Sidebar />
             <div className="flex flex-1 flex-col overflow-hidden">
                 <Navbar />
@@ -57,7 +57,7 @@ export default function CGPAPredictorPage() {
 
                         {/* Header */}
                         <div className="flex flex-col gap-2">
-                            <h1 className="text-3xl font-bold tracking-tight text-foreground">
+                            <h1 className="text-3xl font-bold tracking-tight text-white">
                                 CGPA Predictor
                             </h1>
                             <p className="text-muted-foreground">
@@ -68,7 +68,7 @@ export default function CGPAPredictorPage() {
                         {/* Top Section: Donut + Summary */}
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                             {/* Left: Donut Chart */}
-                            <div className="lg:col-span-4 flex flex-col items-center justify-center bg-card/50 p-6 rounded-[24px] border border-border">
+                            <div className="lg:col-span-4 flex flex-col items-center justify-center bg-[#181B23]/50 p-6 rounded-[24px] border border-white/5">
                                 <CGPADonut cgpa={cgpa} subjects={subjects} />
                             </div>
 
@@ -88,10 +88,10 @@ export default function CGPAPredictorPage() {
                         {/* Grade Table Section */}
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
-                                <h2 className="text-lg font-semibold text-foreground">Subject Grades</h2>
+                                <h2 className="text-lg font-semibold text-white">Subject Grades</h2>
                                 <button
                                     onClick={addSubject}
-                                    className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                                    className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
                                 >
                                     <Plus className="h-4 w-4" />
                                     Add Subject

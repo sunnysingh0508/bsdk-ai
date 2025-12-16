@@ -11,17 +11,17 @@ import DangerZone from '@/components/settings/DangerZone';
 
 export default function SettingsPage() {
     return (
-        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
             <div className="max-w-3xl mx-auto space-y-8 animate-in fade-in duration-500">
 
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-6">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                        <Settings className="w-8 h-8 text-primary" />
+                    <div className="p-2 bg-[#6366F1]/10 rounded-lg">
+                        <Settings className="w-8 h-8 text-[#6366F1]" />
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold font-heading text-foreground">Settings</h1>
-                        <p className="text-muted-foreground">Manage your account preferences, appearance, notifications, and security.</p>
+                        <h1 className="text-3xl font-bold font-heading text-white">Settings</h1>
+                        <p className="text-gray-400">Manage your account preferences, appearance, notifications, and security.</p>
                     </div>
                 </div>
 

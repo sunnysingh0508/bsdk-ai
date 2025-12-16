@@ -7,7 +7,7 @@ export function ReminderWidget() {
         "Timetable updated automatically",
     ];
     return (
-        <div className="rounded-xl bg-white p-5 shadow-sm border border-gray-100">
+        <div className="rounded-xl bg-card p-5 shadow-sm border border-border">
             <h3 className="mb-4 flex items-center gap-2 font-semibold">
                 <Bell className="h-4 w-4 text-indigo-500" /> Reminders
             </h3>
@@ -25,11 +25,11 @@ export function ReminderWidget() {
 
 export function MiniCalendar() {
     return (
-        <div className="rounded-xl bg-white p-5 shadow-sm border border-gray-100">
+        <div className="rounded-xl bg-card p-5 shadow-sm border border-border">
             <h3 className="mb-4 flex items-center gap-2 font-semibold">
                 <Calendar className="h-4 w-4 text-purple-500" /> Calendar
             </h3>
-            <div className="text-center text-sm text-muted-foreground p-8 bg-gray-50 rounded-lg border border-dashed">
+            <div className="text-center text-sm text-muted-foreground p-8 bg-muted/50 rounded-lg border border-dashed border-border">
                 Calendar Widget Placeholder
             </div>
         </div>

@@ -34,16 +34,16 @@ export default function HelpPage() {
     );
 
     return (
-        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
             <div className="max-w-5xl mx-auto animate-in fade-in duration-500">
 
                 {/* Header */}
                 <div className="text-center mb-10">
                     <div className="flex items-center justify-center gap-3 mb-4">
-                        <HelpCircle className="w-8 h-8 text-primary" />
-                        <h1 className="text-3xl font-bold font-heading text-foreground">Help & Support</h1>
+                        <HelpCircle className="w-8 h-8 text-[#6366F1]" />
+                        <h1 className="text-3xl font-bold font-heading text-white">Help & Support</h1>
                     </div>
-                    <p className="text-muted-foreground mb-8">We’re here to help you get the most out of BSDK AI.</p>
+                    <p className="text-gray-400 mb-8">We’re here to help you get the most out of BSDK AI.</p>
                     <SearchBar onSearch={setSearchQuery} />
                 </div>
 
@@ -58,18 +58,18 @@ export default function HelpPage() {
 
                 {/* FAQs */}
                 <div className="max-w-3xl mx-auto mb-16">
-                    <h2 className="text-xl font-bold text-foreground mb-6 text-center">
+                    <h2 className="text-xl font-bold text-white mb-6 text-center">
                         {searchQuery ? "Search Results" : "Frequently Asked Questions"}
                     </h2>
                     {filteredFAQs.length > 0 ? (
                         <FAQAccordion items={filteredFAQs} />
                     ) : (
                         <div className="text-center py-10">
-                            <div className="w-20 h-20 rounded-full bg-card flex items-center justify-center mx-auto mb-4">
-                                <HelpCircle className="w-10 h-10 text-muted-foreground" />
+                            <div className="w-20 h-20 rounded-full bg-[#181B23] flex items-center justify-center mx-auto mb-4">
+                                <HelpCircle className="w-10 h-10 text-gray-600" />
                             </div>
-                            <h3 className="text-foreground font-bold mb-1">No results found</h3>
-                            <p className="text-sm text-muted-foreground">Try searching with different keywords.</p>
+                            <h3 className="text-white font-bold mb-1">No results found</h3>
+                            <p className="text-sm text-gray-500">Try searching with different keywords.</p>
                         </div>
                     )}
                 </div>
@@ -81,12 +81,12 @@ export default function HelpPage() {
                 </div>
 
                 {/* Links */}
-                <div className="flex justify-center gap-6 mt-12 text-sm text-muted-foreground">
-                    <a href="#" className="hover:text-foreground transition-colors">Documentation</a>
-                    <span className="text-muted-foreground/10">•</span>
-                    <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-                    <span className="text-muted-foreground/10">•</span>
-                    <a href="#" className="hover:text-foreground transition-colors">Terms & Conditions</a>
+                <div className="flex justify-center gap-6 mt-12 text-sm text-gray-500">
+                    <a href="#" className="hover:text-white transition-colors">Documentation</a>
+                    <span className="text-white/10">•</span>
+                    <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                    <span className="text-white/10">•</span>
+                    <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
                 </div>
 
             </div>

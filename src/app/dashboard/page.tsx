@@ -83,7 +83,7 @@ export default function DashboardPage() {
                                 <h2 className="font-bold text-lg text-foreground">Attendance & Bunk Status</h2>
                                 <button className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline">Manage</button>
                             </div>
-                            <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-sm">
+                            <div className="rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm">
                                 <AttendanceWidget attendance={attendanceData} />
                             </div>
 
@@ -96,11 +96,11 @@ export default function DashboardPage() {
 
                     {/* Row 2: Charts */}
                     <div className="grid gap-8 md:grid-cols-2">
-                        <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-sm">
+                        <div className="rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm">
                             <h2 className="font-bold text-lg mb-6">CGPA Insights</h2>
                             <CGPAChart cgpa={8.4} />
                         </div>
-                        <div className="rounded-xl border bg-card text-card-foreground p-6 shadow-sm">
+                        <div className="rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm">
                             <h2 className="font-bold text-lg mb-2">Weekly Study Insights</h2>
                             <ProductivityChart />
                         </div>

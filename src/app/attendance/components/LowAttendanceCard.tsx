@@ -15,7 +15,7 @@ export function LowAttendanceCard({ data }: { data: SubjectData }) {
                 <AlertTriangle className="h-5 w-5" />
             </div>
             <div>
-                <h4 className="text-sm font-semibold text-foreground">{data.subject}</h4>
+                <h4 className="text-sm font-semibold text-white">{data.subject}</h4>
                 <div className="flex items-center gap-2 mt-1">
                     <span className="text-xs font-bold text-[#FF5A5A]">
                         {percentage.toFixed(1)}%

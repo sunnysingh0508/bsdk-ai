@@ -32,9 +32,9 @@ const testimonials = [
 
 export function SocialProof() {
     return (
-        <SectionWrapper id="testimonials" className="bg-background">
+        <SectionWrapper id="testimonials" className="bg-white">
             {/* Stats Section */}
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 mb-24 border-b border-border pb-16">
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 mb-24 border-b border-gray-100 pb-16">
                 {stats.map((stat, index) => (
                     <div key={index} className="text-center">
                         <h3 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -55,7 +55,7 @@ export function SocialProof() {
 
             <div className="grid gap-6 md:grid-cols-3">
                 {testimonials.map((t, index) => (
-                    <Card key={index} className={`p-8 border-none ${t.bg === "bg-indigo-50" ? "bg-indigo-500/10" : t.bg === "bg-purple-50" ? "bg-purple-500/10" : "bg-pink-500/10"}`}>
+                    <Card key={index} className={`p-8 border-none ${t.bg}`}>
                         <div className="flex gap-1 mb-4 text-yellow-500">
                             <Star className="h-4 w-4 fill-current" />
                             <Star className="h-4 w-4 fill-current" />
@@ -67,7 +67,7 @@ export function SocialProof() {
                             "{t.quote}"
                         </p>
                         <div className="flex items-center gap-3">
-                            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-muted to-muted/80" />
+                            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300" />
                             <div>
                                 <p className="font-bold text-sm text-foreground">{t.author}</p>
                                 <p className="text-xs text-muted-foreground">{t.role}</p>

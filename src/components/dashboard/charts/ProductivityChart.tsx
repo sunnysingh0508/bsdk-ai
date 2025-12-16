@@ -7,9 +7,9 @@ export function ProductivityChart() {
         <div className="h-full w-full pt-4">
             <svg className="h-[150px] w-full overflow-visible" viewBox="0 0 600 100" preserveAspectRatio="none">
                 {/* Grid Lines */}
-                <line x1="0" y1="25" x2="600" y2="25" stroke="#e5e7eb" strokeWidth="1" strokeDasharray="4" />
-                <line x1="0" y1="50" x2="600" y2="50" stroke="#e5e7eb" strokeWidth="1" strokeDasharray="4" />
-                <line x1="0" y1="75" x2="600" y2="75" stroke="#e5e7eb" strokeWidth="1" strokeDasharray="4" />
+                <line x1="0" y1="25" x2="600" y2="25" className="stroke-border" strokeWidth="1" strokeDasharray="4" />
+                <line x1="0" y1="50" x2="600" y2="50" className="stroke-border" strokeWidth="1" strokeDasharray="4" />
+                <line x1="0" y1="75" x2="600" y2="75" className="stroke-border" strokeWidth="1" strokeDasharray="4" />
 
                 {/* Chart Area */}
                 <path

@@ -30,7 +30,7 @@ export function Footer() {
     };
 
     return (
-        <footer className="w-full border-t border-border bg-background py-12 md:py-24">
+        <footer className="w-full border-t border-gray-100 bg-white py-12 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
                     <div className="lg:col-span-2">
@@ -100,7 +100,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+                <div className="mt-12 pt-8 border-t border-gray-50 text-center text-sm text-muted-foreground">
                     <p>© 2025 BSDK AI — Smart College Life OS. All rights reserved.</p>
                 </div>
             </div>

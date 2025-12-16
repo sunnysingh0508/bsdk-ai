@@ -65,7 +65,7 @@ export function CGPADonut({ cgpa, subjects }: CGPADonutProps) {
                     fill="transparent"
                     strokeWidth="12"
                     stroke="currentColor"
-                    className="text-muted/10"
+                    className="text-white/5"
                 />
 
                 {/* Data Segments */}
@@ -77,14 +77,14 @@ export function CGPADonut({ cgpa, subjects }: CGPADonutProps) {
                         fill="transparent"
                         strokeWidth="12"
                         stroke="currentColor"
-                        className="text-muted/20"
+                        className="text-white/10"
                     />
                 )}
             </svg>
 
             {/* Center Text */}
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-4xl font-bold text-foreground tracking-tighter drop-shadow-lg">
+                <span className="text-4xl font-bold text-white tracking-tighter drop-shadow-lg">
                     {cgpa.toFixed(2)}
                 </span>
                 <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest mt-1">

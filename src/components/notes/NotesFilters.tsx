@@ -35,14 +35,14 @@ export default function NotesFilters({
             {/* Search */}
             <div className="relative flex-1 max-w-xl group">
                 <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-                    <Search className="w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                    <Search className="w-4 h-4 text-gray-400 group-focus-within:text-[#6366F1] transition-colors" />
                 </div>
                 <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search notes by title, subject, or tag…"
-                    className="w-full bg-card border border-input text-foreground text-sm rounded-xl py-2.5 pl-10 pr-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all placeholder:text-muted-foreground"
+                    className="w-full bg-[#181B23] border border-white/5 text-white text-sm rounded-xl py-2.5 pl-10 pr-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 focus:border-[#6366F1]/50 transition-all placeholder:text-gray-500"
                 />
             </div>
 
@@ -53,14 +53,14 @@ export default function NotesFilters({
                     <select
                         value={selectedSubject}
                         onChange={(e) => setSelectedSubject(e.target.value)}
-                        className="appearance-none bg-card border border-input text-foreground text-sm rounded-xl py-2.5 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-primary/50 cursor-pointer min-w-[140px]"
+                        className="appearance-none bg-[#181B23] border border-white/5 text-gray-300 text-sm rounded-xl py-2.5 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 cursor-pointer min-w-[140px]"
                     >
                         <option value="All">All Subjects</option>
                         {subjects.map(sub => (
                             <option key={sub} value={sub}>{sub}</option>
                         ))}
                     </select>
-                    <Filter className="w-3.5 h-3.5 text-muted-foreground absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <Filter className="w-3.5 h-3.5 text-gray-500 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
 
                 {/* Sort */}
@@ -68,22 +68,22 @@ export default function NotesFilters({
                     <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as SortOption)}
-                        className="appearance-none bg-card border border-input text-foreground text-sm rounded-xl py-2.5 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-primary/50 cursor-pointer min-w-[140px]"
+                        className="appearance-none bg-[#181B23] border border-white/5 text-gray-300 text-sm rounded-xl py-2.5 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-[#6366F1]/50 cursor-pointer min-w-[140px]"
                     >
                         <option value="newest">Newest First</option>
                         <option value="oldest">Oldest First</option>
                         <option value="alphabetical">Alphabetical</option>
                     </select>
-                    <ArrowUpDown className="w-3.5 h-3.5 text-muted-foreground absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <ArrowUpDown className="w-3.5 h-3.5 text-gray-500 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                 </div>
 
                 {/* View Toggle */}
-                <div className="flex p-1 bg-card border border-input rounded-xl">
+                <div className="flex p-1 bg-[#181B23] border border-white/5 rounded-xl">
                     <button
                         onClick={() => setViewMode('grid')}
                         className={cn(
                             "p-2 rounded-lg transition-all",
-                            viewMode === 'grid' ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"
+                            viewMode === 'grid' ? "bg-white/10 text-white" : "text-gray-500 hover:text-gray-300"
                         )}
                         title="Grid View"
                     >
@@ -93,7 +93,7 @@ export default function NotesFilters({
                         onClick={() => setViewMode('list')}
                         className={cn(
                             "p-2 rounded-lg transition-all",
-                            viewMode === 'list' ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"
+                            viewMode === 'list' ? "bg-white/10 text-white" : "text-gray-500 hover:text-gray-300"
                         )}
                         title="List View"
                     >

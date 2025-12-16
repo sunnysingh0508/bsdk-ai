@@ -11,23 +11,23 @@ import SubjectTable from '@/components/analytics/SubjectTable';
 
 export default function AnalyticsPage() {
     return (
-        <main className="min-h-screen bg-background p-4 md:p-8 font-sans pb-20">
+        <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
             <div className="max-w-7xl mx-auto animate-in fade-in duration-500">
 
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
                     <div>
-                        <h1 className="text-3xl font-bold font-heading text-foreground mb-2">Analytics Dashboard</h1>
-                        <p className="text-muted-foreground">Visual insights into your academic performance and productivity.</p>
+                        <h1 className="text-3xl font-bold font-heading text-white mb-2">Analytics Dashboard</h1>
+                        <p className="text-gray-400">Visual insights into your academic performance and productivity.</p>
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <select className="bg-card text-foreground text-sm border border-input rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                        <select className="bg-[#181B23] text-white text-sm border border-white/5 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-500/50">
                             <option>Last 30 Days</option>
                             <option>This Semester</option>
                             <option>Last Quarter</option>
                         </select>
-                        <button className="bg-card hover:bg-muted text-foreground text-sm font-medium border border-input rounded-xl px-4 py-2.5 transition-colors">
+                        <button className="bg-white/5 hover:bg-white/10 text-white text-sm font-medium border border-white/5 rounded-xl px-4 py-2.5 transition-colors">
                             Export Report
                         </button>
                     </div>

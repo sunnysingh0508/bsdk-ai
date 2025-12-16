@@ -1,129 +1,125 @@
 @import "tailwindcss";
 
 :root {
-  /* BSDK AI Color Palette - Light Mode */
-  --background: #F8F9FC;
-  --foreground: #0f172a;
-  /* Slate 900 */
+    /* BSDK AI Color Palette - Light Mode */
+    --background: #F8F9FC;
+    --foreground: #0f172a;
+    /* Slate 900 */
 
-  --primary: #6366F1;
-  /* Indigo */
-  --primary-foreground: #ffffff;
+    --primary: #6366F1;
+    /* Indigo */
+    --primary-foreground: #ffffff;
 
-  --secondary: #A855F7;
-  /* Purple */
-  --secondary-foreground: #ffffff;
+    --secondary: #A855F7;
+    /* Purple */
+    --secondary-foreground: #ffffff;
 
-  --accent: #EC4899;
-  /* Pink */
-  --accent-foreground: #ffffff;
+    --accent: #EC4899;
+    /* Pink */
+    --accent-foreground: #ffffff;
 
-  --card: #FFFFFF;
-  --card-foreground: #0f172a;
+    --card: #FFFFFF;
+    --card-foreground: #0f172a;
 
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
 
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #6366F1;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #6366F1;
 
-  /* Font Variables (mapped from layout.tsx) */
-  --font-sans: var(--font-poppins);
-  --font-heading: var(--font-poppins);
+    /* Font Variables (mapped from layout.tsx) */
+    --font-sans: var(--font-inter);
+    --font-heading: var(--font-dm-sans);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1A1D1D;
-    /* Deep Charcoal */
-    --foreground: #FFFFFF;
-    /* White */
+    :root {
+        --background: #0f172a;
+        /* Slate 900 */
+        --foreground: #f8fafc;
 
-    --primary: #D7FEFA;
-    /* Mint */
-    --primary-foreground: #1A1D1D;
-    /* Charcoal Text */
+        --primary: #818cf8;
+        --primary-foreground: #0f172a;
 
-    --secondary: #2B2E2E;
-    /* Lighter Charcoal */
-    --secondary-foreground: #D7FEFA;
-    /* Mint Text */
+        --secondary: #c084fc;
+        --secondary-foreground: #0f172a;
 
-    --accent: #D7FEFA;
-    /* Mint Accent */
-    --accent-foreground: #1A1D1D;
+        --accent: #f472b6;
+        --accent-foreground: #0f172a;
 
-    --card: #2B2E2E;
-    /* Lighter Charcoal */
-    --card-foreground: #FFFFFF;
+        --card: #1e293b;
+        /* Slate 800 */
+        --card-foreground: #f8fafc;
 
-    --muted: #2B2E2E;
-    --muted-foreground: #a1a1aa;
+        --muted: #334155;
+        /* Slate 700 */
+        --muted-foreground: #94a3b8;
 
-    --border: #2B2E2E;
-    --input: #2B2E2E;
-    --ring: #D7FEFA;
-  }
+        --border: #334155;
+        /* Slate 700 */
+        --input: #334155;
+        --ring: #818cf8;
+    }
 }
 
 .dark {
-  --background: #1A1D1D;
-  --foreground: #FFFFFF;
+    --background: #0f172a;
+    --foreground: #f8fafc;
 
-  --primary: #D7FEFA;
-  --primary-foreground: #1A1D1D;
+    --primary: #818cf8;
+    --primary-foreground: #0f172a;
 
-  --secondary: #2B2E2E;
-  --secondary-foreground: #D7FEFA;
+    --secondary: #c084fc;
+    --secondary-foreground: #0f172a;
 
-  --accent: #D7FEFA;
-  --accent-foreground: #1A1D1D;
+    --accent: #f472b6;
+    --accent-foreground: #0f172a;
 
-  --card: #2B2E2E;
-  --card-foreground: #FFFFFF;
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
 
-  --muted: #2B2E2E;
-  --muted-foreground: #a1a1aa;
+    --muted: #334155;
+    --muted-foreground: #94a3b8;
 
-  --border: #2B2E2E;
-  --input: #2B2E2E;
-  --ring: #D7FEFA;
+    --border: #334155;
+    --input: #334155;
+    --ring: #818cf8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
 
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
 
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
 
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
 
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
 
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -132,19 +128,22 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+    font-family: var(--font-heading);
 }
 
 /* Glassmorphism Utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    /* Grey border (slate-200) instead of white */
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    /* Grey border (slate-200) */
 }

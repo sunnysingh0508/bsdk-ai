@@ -22,7 +22,7 @@ export function GradeTable({ subjects, updateSubject, removeSubject }: GradeTabl
                 {subjects.map((subject) => (
                     <div
                         key={subject.id}
-                        className="group grid grid-cols-12 gap-4 items-center bg-background/50 p-3 rounded-xl border border-border hover:border-border/80 transition-colors"
+                        className="group grid grid-cols-12 gap-4 items-center bg-[#0D0F15]/50 p-3 rounded-xl border border-white/5 hover:border-white/10 transition-colors"
                     >
                         {/* Subject Name Input */}
                         <div className="col-span-5">
@@ -31,7 +31,7 @@ export function GradeTable({ subjects, updateSubject, removeSubject }: GradeTabl
                                 value={subject.name}
                                 onChange={(e) => updateSubject(subject.id, "name", e.target.value)}
                                 placeholder="e.g. Calculus"
-                                className="w-full bg-transparent text-sm text-foreground placeholder-muted-foreground focus:outline-none border-b border-transparent focus:border-primary transition-colors py-1"
+                                className="w-full bg-transparent text-sm text-white placeholder-white/20 focus:outline-none border-b border-transparent focus:border-indigo-500 transition-colors py-1"
                             />
                         </div>
 
@@ -40,7 +40,7 @@ export function GradeTable({ subjects, updateSubject, removeSubject }: GradeTabl
                             <select
                                 value={subject.grade}
                                 onChange={(e) => updateSubject(subject.id, "grade", e.target.value as Grade)}
-                                className="w-full bg-card text-sm text-foreground rounded-lg border border-input px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
+                                className="w-full bg-[#181B23] text-sm text-white rounded-lg border border-white/10 px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-indigo-500"
                             >
                                 {(Object.keys(GRADE_POINTS) as Grade[]).map((g) => (
                                     <option key={g} value={g}>{g}</option>
@@ -56,7 +56,7 @@ export function GradeTable({ subjects, updateSubject, removeSubject }: GradeTabl
                                 max="5"
                                 value={subject.credits}
                                 onChange={(e) => updateSubject(subject.id, "credits", Number(e.target.value))}
-                                className="w-full bg-card text-sm text-foreground rounded-lg border border-input px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
+                                className="w-full bg-[#181B23] text-sm text-white rounded-lg border border-white/10 px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-indigo-500"
                             />
                         </div>
 
@@ -73,7 +73,7 @@ export function GradeTable({ subjects, updateSubject, removeSubject }: GradeTabl
                 ))}
 
                 {subjects.length === 0 && (
-                    <div className="text-center py-8 text-muted-foreground text-sm border border-dashed border-border rounded-xl">
+                    <div className="text-center py-8 text-muted-foreground text-sm border border-dashed border-white/10 rounded-xl">
                         No subjects added. Click "Add Subject" to start.
                     </div>
                 )}

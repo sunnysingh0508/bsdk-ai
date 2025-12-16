@@ -10,13 +10,13 @@ export function TimetablePreview() {
     return (
         <div className="space-y-3">
             {todayClasses.map((cls, i) => (
-                <div key={i} className="flex items-center gap-3 rounded-lg border bg-white p-3 hover:bg-gray-50 transition-colors">
-                    <div className={`flex h-12 w-12 flex-shrink-0 flex-col items-center justify-center rounded-lg text-xs font-bold leading-none ${cls.color}`}>
+                <div key={i} className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 hover:bg-muted/50 transition-colors">
+                    <div className={`flex h-12 w-12 flex-shrink-0 flex-col items-center justify-center rounded-lg text-xs font-bold leading-none ${cls.color} dark:bg-opacity-20`}>
                         <span>{cls.time.split(":")[0]}</span>
                         <span>AM</span>
                     </div>
                     <div className="flex-1">
-                        <h4 className="font-semibold text-sm">{cls.subject}</h4>
+                        <h4 className="font-semibold text-sm text-foreground">{cls.subject}</h4>
                         <div className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
                             <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {cls.time}</span>
                             <span>•</span>
