@@ -3,7 +3,8 @@ import Link from "next/link";
 import { StatCard } from "@/components/dashboard/widgets/StatCard";
 import { AssignmentCard } from "@/components/dashboard/widgets/AssignmentCard";
 import { AttendanceWidget } from "@/components/dashboard/widgets/AttendanceWidget";
-import { TimetablePreview } from "@/components/dashboard/widgets/TimetablePreview";
+import { UpcomingClasses } from "@/components/dashboard/UpcomingClasses";
+// import { TimetablePreview } from "@/components/dashboard/widgets/TimetablePreview";
 import { ReminderWidget, MiniCalendar, AISuggestionCard } from "@/components/dashboard/widgets/RightPanelWidgets";
 import { CGPAChart } from "@/components/dashboard/charts/CGPAChart";
 import { ProductivityChart } from "@/components/dashboard/charts/ProductivityChart";
@@ -36,13 +37,15 @@ export default function DashboardPage() {
 
             {/* Stats Grid */}
             <div className="grid gap-4 md:grid-cols-3">
-                <StatCard
-                    label="Upcoming Classes Today"
-                    value="3"
-                    icon={BookOpen}
-                    trend="+2 from yesterday"
-                    gradient="bg-gradient-to-br from-purple-500 to-pink-500"
-                />
+                <Link href="#upcoming-classes" className="block transition-transform hover:scale-[1.02]">
+                    <StatCard
+                        label="Upcoming Classes Today"
+                        value="3"
+                        icon={BookOpen}
+                        trend="+2 from yesterday"
+                        gradient="bg-gradient-to-br from-purple-500 to-pink-500"
+                    />
+                </Link>
                 <StatCard
                     label="Pending Assignments"
                     value="5"
@@ -88,8 +91,8 @@ export default function DashboardPage() {
                             </div>
 
                             <div className="pt-4">
-                                <h2 className="font-bold text-lg mb-4 text-foreground">Timetable Preview</h2>
-                                <TimetablePreview />
+                                <h2 className="font-bold text-lg mb-4 text-foreground sr-only">Upcoming Classes</h2>
+                                <UpcomingClasses />
                             </div>
                         </div>
                     </div>

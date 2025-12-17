@@ -10,7 +10,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white font-sans text-foreground selection:bg-primary/10 selection:text-primary">
+    <main className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/10 selection:text-primary">
       <Navbar />
 
       <div className="flex flex-col">

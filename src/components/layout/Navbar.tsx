@@ -4,7 +4,7 @@ import { Logo } from "@/components/ui/Logo";
 
 export function Navbar() {
     return (
-        <header className="fixed top-0 z-50 w-full border-b border-white/20 bg-white/60 backdrop-blur-md">
+        <header className="fixed top-0 z-50 w-full border-b border-border bg-background/60 backdrop-blur-md">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* Logo */}
                 <div className="flex items-center gap-2">

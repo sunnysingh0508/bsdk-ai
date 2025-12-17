@@ -31,6 +31,12 @@
     /* Font Variables (mapped from layout.tsx) */
     --font-sans: var(--font-inter);
     --font-heading: var(--font-dm-sans);
+    --font-heading: var(--font-dm-sans);
+
+    /* Glass Vars - Light */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-card-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(226, 232, 240, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,7 +65,15 @@
         --border: #334155;
         /* Slate 700 */
         --input: #334155;
+        --border: #334155;
+        /* Slate 700 */
+        --input: #334155;
         --ring: #818cf8;
+
+        /* Glass Vars - Dark */
+        --glass-bg: rgba(30, 41, 59, 0.7);
+        --glass-card-bg: rgba(30, 41, 59, 0.8);
+        --glass-border: rgba(51, 65, 85, 0.5);
     }
 }
 
@@ -84,7 +98,14 @@
 
     --border: #334155;
     --input: #334155;
+    --border: #334155;
+    --input: #334155;
     --ring: #818cf8;
+
+    /* Glass Vars - Dark */
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-card-bg: rgba(30, 41, 59, 0.8);
+    --glass-border: rgba(51, 65, 85, 0.5);
 }
 
 @theme inline {
@@ -132,18 +153,17 @@ h6 {
 }
 
 /* Glassmorphism Utilities */
+/* Glassmorphism Utilities */
 .glass {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(226, 232, 240, 0.5);
-    /* Grey border (slate-200) instead of white */
+    border: 1px solid var(--glass-border);
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--glass-card-bg);
     backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-    border: 1px solid rgba(226, 232, 240, 0.5);
-    /* Grey border (slate-200) */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
 }

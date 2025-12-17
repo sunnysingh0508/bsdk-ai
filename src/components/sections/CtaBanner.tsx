@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function CtaBanner() {
     return (
-        <section className="py-24 bg-white px-4">
+        <section className="py-24 bg-background px-4">
             <div className="container mx-auto">
                 <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-16 text-center shadow-2xl sm:px-16 sm:py-24">
                     <div className="relative z-10 mx-auto max-w-2xl">

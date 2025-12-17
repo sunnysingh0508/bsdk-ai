@@ -14,27 +14,27 @@ const testimonials = [
         quote: "Finally, an app that actually understands college life. The UI is honestly better than Notion.",
         author: "Rahul S.",
         role: "CS Student",
-        bg: "bg-indigo-50",
+        bg: "bg-indigo-500/5 data-[state=dark]:border-indigo-500/20",
     },
     {
         quote: "The bunk calculator saved my attendance multiple times. I know exactly when I can skip now.",
         author: "Priya M.",
         role: "Engineering Student",
-        bg: "bg-purple-50",
+        bg: "bg-purple-500/5 data-[state=dark]:border-purple-500/20",
     },
     {
         quote: "Assignments are under control for the first time! The reminders are a lifesaver.",
         author: "Aditya K.",
         role: "Medical Student",
-        bg: "bg-pink-50",
+        bg: "bg-pink-500/5 data-[state=dark]:border-pink-500/20",
     },
 ];
 
 export function SocialProof() {
     return (
-        <SectionWrapper id="testimonials" className="bg-white">
+        <SectionWrapper id="testimonials" className="bg-background">
             {/* Stats Section */}
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 mb-24 border-b border-gray-100 pb-16">
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4 mb-24 border-b border-border pb-16">
                 {stats.map((stat, index) => (
                     <div key={index} className="text-center">
                         <h3 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -55,7 +55,7 @@ export function SocialProof() {
 
             <div className="grid gap-6 md:grid-cols-3">
                 {testimonials.map((t, index) => (
-                    <Card key={index} className={`p-8 border-none ${t.bg}`}>
+                    <Card key={index} className={`p-8 border border-border ${t.bg}`}>
                         <div className="flex gap-1 mb-4 text-yellow-500">
                             <Star className="h-4 w-4 fill-current" />
                             <Star className="h-4 w-4 fill-current" />

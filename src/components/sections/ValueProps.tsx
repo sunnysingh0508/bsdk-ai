@@ -9,27 +9,27 @@ const valueProps = [
         description:
             "No need to use multiple apps. BSDK AI integrates attendance, assignments, and grades into a single streamlined dashboard.",
         icon: Layers,
-        color: "bg-blue-100 text-blue-600",
+        color: "bg-blue-500/10 text-blue-500",
     },
     {
         title: "Smart Insights",
         description:
             "AI analyzes your data to give you accurate CGPA forecasts, bunk limits, and workload predictions before it's too late.",
         icon: Sparkles,
-        color: "bg-purple-100 text-purple-600",
+        color: "bg-purple-500/10 text-purple-500",
     },
     {
         title: "Personalized Workflow",
         description:
             "The system adapts to your unique timetable, study habits, and subjects, creating a truly custom experience.",
         icon: Zap,
-        color: "bg-yellow-100 text-yellow-600",
+        color: "bg-yellow-500/10 text-yellow-500",
     },
 ];
 
 export function ValueProps() {
     return (
-        <SectionWrapper className="bg-white">
+        <SectionWrapper className="bg-background">
             <div className="mb-16 text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                     Why Students Choose BSDK AI?
@@ -39,7 +39,7 @@ export function ValueProps() {
             <div className="grid gap-8 md:grid-cols-3">
                 {valueProps.map((prop, index) => (
                     <Link href="/login" key={index} className="block group">
-                        <Card className="p-8 border-none shadow-none bg-[#F8F9FC] h-full transition-all hover:bg-gray-50 cursor-pointer">
+                        <Card className="p-8 border border-border bg-card h-full transition-all hover:bg-muted/50 cursor-pointer">
                             <div
                                 className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${prop.color}`}
                             >

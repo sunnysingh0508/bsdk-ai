@@ -33,7 +33,7 @@ export default function LoginPage() {
             </div>
 
             {/* Right Column - Visual (Hidden on mobile) */}
-            <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
+            <div className="relative hidden h-full flex-col bg-slate-50 p-0 text-white lg:flex">
                 <AuthVisual />
             </div>
         </div>

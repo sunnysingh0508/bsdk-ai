@@ -61,10 +61,10 @@ export function Sidebar() {
             {/* Collapse Toggle Button */}
             <button
                 onClick={() => setCollapsed(!collapsed)}
-                className="absolute -right-3 top-9 z-50 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-md hover:bg-muted hover:text-primary transition-all"
+                className="absolute -right-3 top-9 z-50 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm hover:text-foreground transition-colors"
                 title={collapsed ? "Expand Sidebar" : "Collapse Sidebar"}
             >
-                {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+                {collapsed ? <ChevronRight className="h-3 w-3" /> : <ChevronLeft className="h-3 w-3" />}
             </button>
 
             {/* Logo */}
