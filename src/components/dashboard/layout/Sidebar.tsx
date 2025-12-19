@@ -22,7 +22,8 @@ import {
     Files,
     FileText,
     ChevronLeft,
-    ChevronRight
+    ChevronRight,
+    Bell
 } from "lucide-react";
 
 const sidebarItems = [
@@ -41,6 +42,7 @@ const sidebarItems = [
         category: "Tools",
         items: [
             { name: "Assignments", href: "/assignments", icon: BookOpen },
+            { name: "Reminders", href: "/reminders", icon: Bell },
             { name: "Notes Library", href: "/notes", icon: Files },
             { name: "Timetable", href: "/timetable", icon: CalendarDays },
         ],
