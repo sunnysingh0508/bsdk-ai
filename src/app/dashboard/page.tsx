@@ -1,5 +1,8 @@
+"use client";
+
 import { BookOpen, GraduationCap, CalendarOff } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 import { StatCard } from "@/components/dashboard/widgets/StatCard";
 import { AssignmentCard } from "@/components/dashboard/widgets/AssignmentCard";
 import { AttendanceWidget } from "@/components/dashboard/widgets/AttendanceWidget";
@@ -9,18 +12,41 @@ import { ReminderWidget, MiniCalendar, AISuggestionCard } from "@/components/das
 import { CGPAChart } from "@/components/dashboard/charts/CGPAChart";
 import { ProductivityChart } from "@/components/dashboard/charts/ProductivityChart";
 
-export default function DashboardPage() {
-    const assignments = [
-        { title: "Calculus Problem Set 3", subject: "Math", due: "2 days", status: "In Progress", progress: 60 },
-        { title: "Sorting Algorithms IO", subject: "DSA", due: "Tomorrow", status: "Pending", progress: 10 },
-        { title: "Physics Lab Report", subject: "Physics", due: "4 days", status: "Completed", progress: 100 },
-    ] as const;
+// Mock Data for Semesters
+const SEMESTER_DATA = {
+    "this-semester": {
+        assignments: [
+            { title: "Calculus Problem Set 3", subject: "Math", due: "2 days", status: "In Progress", progress: 60 },
+            { title: "Sorting Algorithms IO", subject: "DSA", due: "Tomorrow", status: "Pending", progress: 10 },
+            { title: "Physics Lab Report", subject: "Physics", due: "4 days", status: "Completed", progress: 100 },
+        ],
+        attendance: [
+            { subject: "Mathematics", percentage: 88, bunkable: 2 },
+            { subject: "Data Structures", percentage: 72, bunkable: 0 },
+            { subject: "Physics", percentage: 92, bunkable: 3 },
+        ],
+        cgpa: 8.4
+    },
+    "last-semester": {
+        assignments: [
+            { title: "Final Project Report", subject: "Web Dev", due: "Completed", status: "Completed", progress: 100 },
+            { title: "Linear Algebra Exam", subject: "Math", due: "Completed", status: "Completed", progress: 100 },
+            { title: "History Essay", subject: "Elective", due: "Completed", status: "Completed", progress: 100 },
+        ],
+        attendance: [
+            { subject: "Web Development", percentage: 95, bunkable: 5 },
+            { subject: "Linear Algebra", percentage: 80, bunkable: 1 },
+            { subject: "History", percentage: 75, bunkable: 0 },
+        ],
+        cgpa: 8.2
+    }
+};
 
-    const attendanceData = [
-        { subject: "Mathematics", percentage: 88, bunkable: 2 },
-        { subject: "Data Structures", percentage: 72, bunkable: 0 },
-        { subject: "Physics", percentage: 92, bunkable: 3 },
-    ];
+export default function DashboardPage() {
+    const [selectedSemester] = useState<string>("this-semester");
+
+    // Get current data based on selection or default to this-semester
+    const currentData = SEMESTER_DATA[selectedSemester as keyof typeof SEMESTER_DATA] || SEMESTER_DATA["this-semester"];
 
     return (
         <div className="space-y-8 animate-in fade-in duration-500">
@@ -48,16 +74,16 @@ export default function DashboardPage() {
                 </Link>
                 <StatCard
                     label="Pending Assignments"
-                    value="5"
+                    value={selectedSemester === "last-semester" ? "0" : "5"}
                     icon={GraduationCap}
-                    trend="2 due tomorrow"
+                    trend={selectedSemester === "last-semester" ? "All completed" : "2 due tomorrow"}
                     gradient="bg-gradient-to-br from-indigo-500 to-blue-500"
                 />
                 <StatCard
                     label="Safe Bunks Available"
-                    value="2"
+                    value={selectedSemester === "last-semester" ? "-" : "2"}
                     icon={CalendarOff}
-                    trend="+1 since last week"
+                    trend={selectedSemester === "last-semester" ? "Term ended" : "+1 since last week"}
                     gradient="bg-gradient-to-br from-orange-400 to-yellow-400"
                 />
             </div>
@@ -74,8 +100,8 @@ export default function DashboardPage() {
                                 <Link href="/assignments" className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline">View All</Link>
                             </div>
                             <div className="grid gap-4">
-                                {assignments.map((assignment, i) => (
-                                    <AssignmentCard key={i} {...assignment} />
+                                {currentData.assignments.map((assignment, i) => (
+                                    <AssignmentCard key={i} {...(assignment as any)} />
                                 ))}
                             </div>
                         </div>
@@ -87,7 +113,7 @@ export default function DashboardPage() {
                                 <button className="text-sm text-indigo-600 dark:text-indigo-400 hover:underline">Manage</button>
                             </div>
                             <div className="rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm">
-                                <AttendanceWidget attendance={attendanceData} />
+                                <AttendanceWidget attendance={currentData.attendance} />
                             </div>
 
                             <div className="pt-4">
@@ -101,7 +127,7 @@ export default function DashboardPage() {
                     <div className="grid gap-8 md:grid-cols-2">
                         <div className="rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm">
                             <h2 className="font-bold text-lg mb-6">CGPA Insights</h2>
-                            <CGPAChart cgpa={8.4} />
+                            <CGPAChart cgpa={currentData.cgpa} />
                         </div>
                         <div className="rounded-xl border border-border bg-card text-card-foreground p-6 shadow-sm">
                             <h2 className="font-bold text-lg mb-2">Weekly Study Insights</h2>
