@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 // import { AvatarGroup } from "@/components/ui/Avatar"; // We'll mock this for now or standard div
 import { Clock } from "lucide-react";
@@ -18,7 +19,10 @@ export function AssignmentCard({ title, subject, due, status, progress }: Assign
     };
 
     return (
-        <div className="rounded-xl border border-border bg-card p-4 shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+        <Link
+            href="/assignments"
+            className="flex flex-col gap-3 rounded-xl border border-border bg-card p-4 shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-md"
+        >
             <div className="flex items-start justify-between">
                 <Badge variant="outline" className="bg-muted/50 text-xs font-normal text-muted-foreground">{subject}</Badge>
                 <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${statusColor[status]}`}>
@@ -46,6 +50,6 @@ export function AssignmentCard({ title, subject, due, status, progress }: Assign
                     />
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }

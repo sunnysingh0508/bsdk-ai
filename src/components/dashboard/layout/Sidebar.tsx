@@ -78,7 +78,7 @@ export function Sidebar() {
                             <span className="text-xl font-bold tracking-tight text-foreground leading-none">
                                 BSDK AI
                             </span>
-                            <span className="text-[10px] font-medium text-muted-foreground leading-none">
+                            <span className="text-[10px] font-medium text-muted-foreground leading-tight whitespace-normal">
                                 BrightSight Student Development Kit – AI
                             </span>
                         </div>
