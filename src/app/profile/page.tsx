@@ -9,15 +9,38 @@ import SecuritySummary from '@/components/profile/SecuritySummary';
 import { LogOut, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 
+export interface UserProfile {
+    fullName: string;
+    email: string;
+    phone: string;
+    college: string;
+    course: string;
+    semester: string;
+}
+
 export default function ProfilePage() {
+    const [user, setUser] = React.useState<UserProfile>({
+        fullName: "Sunny Singh",
+        email: "sunny@bsdk.ai",
+        phone: "+91 98765 43210",
+        college: "Delhi Technological University",
+        course: "B.Tech Computer Science",
+        semester: "6"
+    });
+
+    const handleUpdateProfile = (updatedUser: UserProfile) => {
+        setUser(updatedUser);
+        // In a real app, make an API call here
+    };
+
     return (
         <main className="min-h-screen bg-[#0E1017] p-4 md:p-8 font-sans pb-20">
             <div className="max-w-4xl mx-auto animate-in fade-in duration-500">
 
-                <ProfileHeader />
+                <ProfileHeader user={user} />
 
                 <div className="grid lg:grid-cols-2 gap-6 mb-6">
-                    <ProfileInfo />
+                    <ProfileInfo user={user} onUpdate={handleUpdateProfile} />
                     <div className="space-y-6">
                         <AcademicOverview />
                         <ActivityTimeline />

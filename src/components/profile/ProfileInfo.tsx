@@ -1,27 +1,38 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, BookOpen, Hash, Edit2, Save } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export default function ProfileInfo() {
+interface UserProfile {
+    fullName: string;
+    email: string;
+    phone: string;
+    college: string;
+    course: string;
+    semester: string;
+}
+
+interface ProfileInfoProps {
+    user: UserProfile;
+    onUpdate: (data: UserProfile) => void;
+}
+
+export default function ProfileInfo({ user, onUpdate }: ProfileInfoProps) {
     const [isEditing, setIsEditing] = useState(false);
-    const [formData, setFormData] = useState({
-        fullName: "Sunny Singh",
-        email: "sunny@bsdk.ai",
-        phone: "+91 98765 43210",
-        college: "Delhi Technological University",
-        course: "B.Tech Computer Science",
-        semester: "6"
-    });
+    const [formData, setFormData] = useState<UserProfile>(user);
+
+    useEffect(() => {
+        setFormData(user);
+    }, [user]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
     const handleSave = () => {
+        onUpdate(formData);
         setIsEditing(false);
-        // Logic to save would go here
     };
 
     return (

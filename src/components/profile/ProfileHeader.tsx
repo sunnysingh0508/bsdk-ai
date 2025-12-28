@@ -3,7 +3,16 @@
 import React, { useState, useRef } from 'react';
 import { Camera, MapPin, GraduationCap } from 'lucide-react';
 
-export default function ProfileHeader() {
+interface UserProfile {
+    fullName: string;
+    email: string;
+    phone: string;
+    college: string;
+    course: string;
+    semester: string;
+}
+
+export default function ProfileHeader({ user }: { user: UserProfile }) {
     const [profileImage, setProfileImage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -30,7 +39,7 @@ export default function ProfileHeader() {
                         {profileImage ? (
                             <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
                         ) : (
-                            "S"
+                            user.fullName.charAt(0)
                         )}
                     </div>
                     <div className="absolute inset-0 rounded-full bg-black/50 flex items-center justify-center opacity-0 group-hover/avatar:opacity-100 transition-opacity border-4 border-[#181B23]">
@@ -42,20 +51,20 @@ export default function ProfileHeader() {
                 <div className="flex-1 pb-2">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
-                            <h1 className="text-3xl font-bold text-white mb-1">Sunny Singh</h1>
-                            <p className="text-gray-400 mb-4">sunny@bsdk.ai</p>
+                            <h1 className="text-3xl font-bold text-white mb-1">{user.fullName}</h1>
+                            <p className="text-gray-400 mb-4">{user.email}</p>
 
                             <div className="flex flex-wrap items-center gap-4 text-sm">
                                 <div className="flex items-center gap-1.5 text-gray-400 bg-white/5 px-3 py-1 rounded-full">
                                     <GraduationCap className="w-4 h-4 text-[#6366F1]" />
-                                    <span>B.Tech CSE</span>
+                                    <span>{user.course}</span>
                                 </div>
                                 <div className="flex items-center gap-1.5 text-gray-400 bg-white/5 px-3 py-1 rounded-full">
                                     <MapPin className="w-4 h-4 text-[#A855F7]" />
-                                    <span>Delhi Technological University</span>
+                                    <span>{user.college}</span>
                                 </div>
                                 <div className="px-3 py-1 rounded-full bg-[#6366F1]/10 text-[#6366F1] font-medium border border-[#6366F1]/20">
-                                    Semester 6
+                                    Semester {user.semester}
                                 </div>
                             </div>
                         </div>
