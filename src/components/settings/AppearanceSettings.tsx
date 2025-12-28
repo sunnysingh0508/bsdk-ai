@@ -1,13 +1,24 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Palette, Moon, Sun, Laptop } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTheme } from 'next-themes';
 
 export default function AppearanceSettings() {
-    const [theme, setTheme] = useState<'Dark' | 'Light' | 'System'>('Dark');
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
     const [accent, setAccent] = useState<'Indigo' | 'Purple' | 'Green'>('Indigo');
     const [animations, setAnimations] = useState(true);
+
+    // Prevent hydration mismatch
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
 
     return (
         <div className="bg-[#181B23] rounded-[24px] p-6 border border-white/5 space-y-6">
@@ -21,13 +32,13 @@ export default function AppearanceSettings() {
                 <label className="text-xs text-gray-500 font-medium mb-3 block">Theme Preference</label>
                 <div className="grid grid-cols-3 gap-3">
                     {[
-                        { id: 'Dark', icon: Moon },
-                        { id: 'Light', icon: Sun },
-                        { id: 'System', icon: Laptop },
+                        { id: 'dark', label: 'Dark', icon: Moon },
+                        { id: 'light', label: 'Light', icon: Sun },
+                        { id: 'system', label: 'System', icon: Laptop },
                     ].map((item) => (
                         <button
                             key={item.id}
-                            onClick={() => setTheme(item.id as any)}
+                            onClick={() => setTheme(item.id)}
                             className={cn(
                                 "flex flex-col items-center justify-center gap-2 py-3 rounded-xl border transition-all",
                                 theme === item.id
@@ -36,7 +47,7 @@ export default function AppearanceSettings() {
                             )}
                         >
                             <item.icon className="w-5 h-5" />
-                            <span className="text-xs font-medium">{item.id}</span>
+                            <span className="text-xs font-medium">{item.label}</span>
                         </button>
                     ))}
                 </div>

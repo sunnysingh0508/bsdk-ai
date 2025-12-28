@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Check, Clock, FileText, CalendarDays } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ActivityTimeline() {
     const activities = [
@@ -15,7 +16,7 @@ export default function ActivityTimeline() {
         <div className="bg-[#181B23] rounded-[24px] p-6 border border-white/5">
             <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-bold text-white">Recent Activity</h2>
-                <button className="text-xs text-[#6366F1] hover:underline">View All</button>
+                <Link href="/activity" className="text-xs text-[#6366F1] hover:underline">View All</Link>
             </div>
 
             <div className="relative pl-4 space-y-6">
