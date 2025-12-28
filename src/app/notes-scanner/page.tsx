@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Camera, Save, Download, ArrowLeft } from 'lucide-react';
 import ScannerUpload from '@/components/ScannerUpload';
 import ImagePreview from '@/components/ImagePreview';
@@ -9,6 +9,7 @@ import ExportOptions from '@/components/ExportOptions';
 import RecentScans from '@/components/RecentScans';
 
 export default function NotesScannerPage() {
+    const fileInputRef = useRef<HTMLInputElement>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [filters, setFilters] = useState({
         brightness: 100,
@@ -50,11 +51,27 @@ export default function NotesScannerPage() {
                     )}
                     <h1 className="text-3xl font-bold font-heading text-white">Notes Scanner</h1>
                     {!selectedImage && (
-                        <div className="p-2 bg-[#6366F1]/10 rounded-lg">
+                        <button
+                            onClick={() => fileInputRef.current?.click()}
+                            className="p-2 bg-[#6366F1]/10 rounded-lg hover:bg-[#6366F1]/20 transition-colors"
+                        >
                             <Camera className="w-6 h-6 text-[#6366F1]" />
-                        </div>
+                        </button>
                     )}
                 </div>
+
+                {/* Hidden File Input for Header Button */}
+                <input
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={(e) => {
+                        if (e.target.files && e.target.files[0]) {
+                            handleFileSelect(e.target.files[0]);
+                        }
+                    }}
+                    className="hidden"
+                    accept="image/*,application/pdf"
+                />
                 <p className="text-gray-400 mb-8 max-w-2xl">
                     {selectedImage
                         ? "Enhance your scan to ensure maximum readability before saving."
