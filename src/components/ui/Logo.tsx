@@ -4,7 +4,7 @@ export function Logo({ className = "h-8 w-8" }: { className?: string }) {
     return (
         <div className={`relative ${className} overflow-hidden rounded-lg shadow-md`}>
             <Image
-                src="/bsdk-logo.jpg"
+                src="/logo-v2.jpg"
                 alt="BSDK AI Logo"
                 fill
                 className="object-contain"
