@@ -1,7 +1,7 @@
 import { ForgotPasswordForm } from "@/components/auth/ForgotPasswordForm";
 import { AuthVisual } from "@/components/auth/AuthVisual";
 import Link from "next/link";
-import { Logo } from "@/components/ui/Logo";
+
 
 export const metadata = {
     title: "Forgot Password - BSDK AI Smart College OS",
@@ -15,7 +15,7 @@ export default function ForgotPasswordPage() {
             {/* Mobile Logo Link */}
             <div className="absolute left-4 top-4 md:left-8 md:top-8 z-20">
                 <Link href="/" className="flex items-center gap-2">
-                    <Logo />
+
                     <div className="flex flex-col">
                         <span className="text-xl font-bold tracking-tight text-foreground hidden md:block leading-none">
                             BSDK AI

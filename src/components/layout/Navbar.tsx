@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { Logo } from "@/components/ui/Logo";
+
 
 export function Navbar() {
     return (
@@ -8,13 +9,17 @@ export function Navbar() {
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* Logo */}
                 <div className="flex items-center gap-2">
-                    <Logo />
-                    <div className="flex flex-col">
+
+                    <div className="flex items-center gap-2">
+                        <Image
+                            src="/logo.png"
+                            alt="BSDK AI Logo"
+                            width={32}
+                            height={32}
+                            className="rounded-full"
+                        />
                         <span className="text-xl font-bold tracking-tight text-foreground leading-none">
                             BSDK AI
-                        </span>
-                        <span className="text-[10px] font-medium text-muted-foreground leading-none">
-                            BrightSight Student Development Kit – AI
                         </span>
                     </div>
                 </div>

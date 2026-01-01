@@ -1,7 +1,8 @@
 import { SignupForm } from "@/components/auth/SignupForm";
 import { AuthVisual } from "@/components/auth/AuthVisual";
 import Link from "next/link";
-import { Logo } from "@/components/ui/Logo";
+import Image from "next/image";
+
 
 export const metadata = {
     title: "Sign Up - BSDK AI Smart College OS",
@@ -15,13 +16,17 @@ export default function SignupPage() {
             {/* Mobile Logo Link */}
             <div className="absolute left-4 top-4 md:left-8 md:top-8 z-20">
                 <Link href="/" className="flex items-center gap-2">
-                    <Logo />
-                    <div className="flex flex-col">
+
+                    <div className="flex items-center gap-2">
+                        <Image
+                            src="/logo.png"
+                            alt="BSDK AI Logo"
+                            width={32}
+                            height={32}
+                            className="rounded-full"
+                        />
                         <span className="text-xl font-bold tracking-tight text-foreground hidden md:block leading-none">
                             BSDK AI
-                        </span>
-                        <span className="text-[10px] font-medium text-muted-foreground hidden md:block leading-none">
-                            BrightSight Student Development Kit – AI
                         </span>
                     </div>
                 </Link>

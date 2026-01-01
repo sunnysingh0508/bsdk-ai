@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@/components/ui/Logo";
+
 
 export function Footer() {
     const links = {
@@ -35,7 +35,7 @@ export function Footer() {
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
                     <div className="lg:col-span-2">
                         <Link href="/" className="flex items-center gap-2 mb-4">
-                            <Logo />
+
                             <div className="flex flex-col">
                                 <span className="text-xl font-bold tracking-tight text-foreground leading-none">
                                     BSDK AI

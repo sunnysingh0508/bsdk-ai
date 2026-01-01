@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Logo } from "@/components/ui/Logo";
+
 import { useState } from "react";
 import {
     LayoutDashboard,
@@ -91,16 +92,31 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 {/* Logo */}
                 <div className={cn("px-6 pb-6 flex items-center", collapsed ? "justify-center px-0" : "")}>
                     <Link href="/dashboard" className="flex items-center gap-2">
-                        <Logo />
+
                         {!collapsed && (
                             <div className="flex flex-col animate-in fade-in duration-200">
-                                <span className="text-xl font-bold tracking-tight text-foreground leading-none">
-                                    BSDK AI
-                                </span>
-                                <span className="text-[10px] font-medium text-muted-foreground leading-tight whitespace-normal">
-                                    BrightSight Student Development Kit – AI
-                                </span>
+                                <div className="flex items-center gap-2">
+                                    <Image
+                                        src="/logo.png"
+                                        alt="BSDK AI Logo"
+                                        width={32}
+                                        height={32}
+                                        className="rounded-full"
+                                    />
+                                    <span className="text-xl font-bold tracking-tight text-foreground leading-none">
+                                        BSDK AI
+                                    </span>
+                                </div>
                             </div>
+                        )}
+                        {collapsed && (
+                            <Image
+                                src="/logo.png"
+                                alt="BSDK AI Logo"
+                                width={32}
+                                height={32}
+                                className="rounded-full"
+                            />
                         )}
                     </Link>
                 </div>

@@ -19,6 +19,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "BSDK AI - Smart College Life OS",
   description: "The all-in-one dashboard for students. CGPA Predictor, Attendance Manager, Bunk Calculator, and more.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
